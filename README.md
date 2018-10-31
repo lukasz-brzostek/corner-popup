@@ -1,1 +1,1 @@
-# Corner Popup for Bootstrap 3
+# Corner Popup v 1.12
