@@ -137,7 +137,5 @@ International License: https://creativecommons.org/licenses/by/4.0
 ## Author
 
 Łukasz Brzostek
-
 Have a question about usage? Found a bug?
-
 Feel free to write a message to me: info@espritdesign.pl
