@@ -57,9 +57,7 @@ cookieimg |   | You can change the image used in popup variant 2 (cookies). Type
 messageimg |   | You can change the image used in popup variant 3 (message). Type your own link to image here.
 header |   | In this option you can change header used in some of popup variants. You can use html tags here.
 text1 |   | In this 2 options you can change text used in popup variants - text1 is for cookie message. You can use html tags here.
-button1 |   | In this 3 options you can change label used in the buttons. "button2" is used in cookies popup.
-button2 |   |
-button3 |   |
+button1, button2, button3 |   | In this 3 options you can change label used in the buttons. "button2" is used in cookies popup.
 content |   | You can place in this option text (including html tags) which is displayed in variant nr.10 of popup - this variant is made to show your own content.
 loadcontent | No | This option loads data from another file (e.g. html file with prepared content). Just write the file address as parameter.
 width | 390px | This option is used to change the popup width. Use here css units.
@@ -82,5 +80,6 @@ International License: https://creativecommons.org/licenses/by/4.0
 ## Author
 
 **Łukasz Brzostek**
+
 Have a question about usage? Found a bug?
 Feel free to write a message to me: info@espritdesign.pl
