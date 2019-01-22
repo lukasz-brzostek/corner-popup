@@ -2,6 +2,8 @@
 
 Fully customizable pop-up box created to display all types of messages in corner of the browser window.
 
+Website: https://espritdesign.pl/cornerpopup/
+
 ## More about Corner Popup
 
 What is Corner Popup? It's a simple pop-up component that can be used on almost all modern websites. It simply displays small pop-up box in corner of the browser. Corner Popup is fully configurable and you can change many parameters - position, window color, content inside etc. Corner Popup is easy to use and you don't need programming skills. As a component Corner Popup needs only jquery to work. It is fully responsive without using any framework.
