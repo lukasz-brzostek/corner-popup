@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corner Popup Demo</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.min.css">
+<link rel="stylesheet" href="css/corner-popup.min.css">
+<link rel="stylesheet" href="css/bootstrap-select.min.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<div id="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12"><a href="index.html"><img src="img/img-2.png" class="center-block img-circle logo"></a>
+        <p class="heading">Corner Popup<span class="version">v 1.13</span></p>
+      </div>
+      <div class="col-xs-12 col-sm-12">
+        <select class="selectpicker" data-width="100%" id="select" onchange="getvariant(this)">
+          <option value="0">Choose a variant:</option>
+          <option value="1">Standard popup</option>
+          <option value="2">Cookies popup</option>
+          <option value="3">Message popup #1</option>
+          <option value="4">Message popup #2</option>
+          <option value="5">Text popup</option>
+          <option value="6">Information popup</option>
+          <option value="7">Header popup</option>
+          <option value="8">Header, text popup</option>
+          <option value="9">Header, text, button popup</option>
+          <option value="10">Own content popup</option>
+        </select>
+      </div>
+      <div class="col-xs-12 col-sm-12">
+        <div class="info text-center"> See <a href="../index.html" class="link">instructions</a> to learn how to customize pop-up. </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+<script src="js/corner-popup.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/bootstrap-select.min.js"></script> 
+<script>
+        getvariant(select);
+        $("body").hide().fadeIn(800);
+
+        function getvariant(select) {
+          if (select.value == 0) {
+            $('#corner-popup').hide();
+          } else {
+           $("#corner-popup, style").remove();
+            var value = select.value;
+            $('body').cornerpopup({
+              'variant': value,
+              'active': 1,
+            });
+          }
+        }
+    </script>
+</body>
+</html>

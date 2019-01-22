@@ -1,0 +1,45 @@
+{
+  "name": "corner-popup",
+  "version": "1.0.13",
+  "description": "popup component",
+  "main": "src/js/corner-popup.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukasz-brzostek/corner-popup.git"
+  },
+  "keywords": [
+    "corner",
+    "popup",
+    "popup",
+    "box",
+    "popup",
+    "pop-up",
+    "cookies",
+    "message"
+  ],
+  "author": "Łukasz Brzostek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukasz-brzostek/corner-popup/issues"
+  },
+  "homepage": "https://github.com/lukasz-brzostek/corner-popup#readme",
+  "dependencies": {
+    "cssc": "0.0.1",
+    "cssmin": "^0.4.3",
+    "grunt": "^1.0.3",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "matchdep": "^2.0.0",
+    "sync": "^0.2.5",
+    "uglify": "^0.1.5",
+    "watch": "^1.0.2"
+  },
+  "devDependencies": {
+    "grunt-contrib": "^0.11.0",
+    "grunt-contrib-uglify": "^4.0.0",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}
