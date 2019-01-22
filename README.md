@@ -54,38 +54,38 @@ variant	       1      	Using this option you can set a variant of the
                         option used for cookies information - it even creates 
                         and saves cookie for you.
 
-slide	         0	      If this option is set to 1 standard method of showing 
+slide	         0        If this option is set to 1 standard method of showing 
                         a popup (fade) will change to slide.
 
-slidetop       0	      This option could be used only if "slide" is set to 1. 
+slidetop       0        This option could be used only if "slide" is set to 1. 
                         It makes slide always work from bottom to top.
 
-timeout	       0	      This option sets the timeout to popup, so it will appear 
+timeout	       0        This option sets the timeout to popup, so it will appear 
                         and disappear after the amount of time you set as parameter. 
                         If you set for example 500 it will disappear after 500ms.
 
-closebtn       1	      Sets close button visibility - if it is set to 0 close button 
+closebtn       1        Sets close button visibility - if it is set to 0 close button 
                         will not show in any variant of the popup.
 
-shadow         1	      Sets popup shadow visibility - if it is set to 0 shadow won't 
+shadow         1        Sets popup shadow visibility - if it is set to 0 shadow won't 
                         be visible in any variant of the popup.
 
-link1		                You can change the link that is used in variant 1 of popup. 
+link1                   You can change the link that is used in variant 1 of popup. 
                         Just type a new address as parameter.
 
-link2          #	      You can change the link that is used in most of popup variants. 
+link2          #        You can change the link that is used in most of popup variants. 
                         Just type a new address as parameter.
 
-popupimg		            You can change the image used in popup variant 1. 
+popupimg                You can change the image used in popup variant 1. 
                         Type your own link to image here.
 
-cookieimg		            You can change the image used in popup variant 2 (cookies). 
+cookieimg               You can change the image used in popup variant 2 (cookies). 
                         Type your own link to image here.
 
-messageimg		          You can change the image used in popup variant 3 (message). 
+messageimg              You can change the image used in popup variant 3 (message). 
                         Type your own link to image here.
 
-header		              In this option you can change header used in some of 
+header                  In this option you can change header used in some of 
                         popup variants. You can use html tags here.
 
 text1                   In this 2 options you can change text used in popup variants 
@@ -95,35 +95,35 @@ button1                 In this 3 options you can change label used in the butto
 button2                 "button2" is used in cookies popup.
 button3		          
 
-content		              You can place in this option text (including html tags) which 
+content                 You can place in this option text (including html tags) which 
                         is displayed in variant nr.10 of popup - this variant is made 
                         to show your own content.
 
-loadcontent   No	      This option loads data from another file (e.g. html file with 
+loadcontent   No        This option loads data from another file (e.g. html file with 
                         prepared content). Just write the file address as parameter.
 
-width         390px   	This option is used to change the popup width. 
+width         390px     This option is used to change the popup width. 
                         Use here css units.
 
-font		                This option is used to change the font used in popup elements. 
+font                    This option is used to change the font used in popup elements. 
                         Use here css code - e.g. "'Open Sans', 'Halvetica', sans-serif".
 
-colors	      #543189  	This option changes color of primary elements - close button 
+colors	      #543189   This option changes color of primary elements - close button 
                         icon, headers, buttons.
 
-bgcolor	      #fff	    This option changes background color of popup.
+bgcolor	      #fff      This option changes background color of popup.
 
-bordercolor   #efefef	  This option changes border color of popup.
+bordercolor   #efefef   This option changes border color of popup.
 
-textcolor     #181818	  This option changes text color in popup.
+textcolor     #181818   This option changes text color in popup.
 
-iconcolor     #543189  	This option changes close button color.
+iconcolor     #543189   This option changes close button color.
 
-btncolor      #543189	  This option changes color of buttons in popup.
+btncolor      #543189   This option changes color of buttons in popup.
 
-btntextcolor  #fff	    This option changes color of text in buttons.
+btntextcolor  #fff      This option changes color of text in buttons.
 
-corners	      0px	      This option is used to change popup corner radius.
+corners	      0px       This option is used to change popup corner radius.
 
 position      right     This option is used to change position of the popup. 
                         You can change position to left, center or right.
