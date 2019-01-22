@@ -2,7 +2,7 @@
 
 Fully customizable pop-up box created to display all types of messages in corner of the browser window.
 
-Website: https://espritdesign.pl/cornerpopup/
+Website: https://espritdesign.pl/corne-rpopup
 
 ## More about Corner Popup
 
