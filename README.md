@@ -1,16 +1,14 @@
 # Corner Popup v1.13
 
-Fully customizable pop-up box created to display all kinds of messages in corner of the browser window.
+Fully customizable pop-up box created to display all types of messages in corner of the browser window.
 
 ## More about Corner Popup
 
-What is Corner Popup? It's a simple pop-up component which could be used in almost all modern websites. It is simply displaying small pop-up box in corner of the browser. Corner Popup is fully configurable and you can change a lot of parameters - position, window color, content inside etc. Corner Popup is easy to use and you don't need programming skills. As component Corner Popup needs only jquery to work. It is fully responsive without usage of any framework.
+What is Corner Popup? It's a simple pop-up component that can be used on almost all modern websites. It simply displays small pop-up box in corner of the browser. Corner Popup is fully configurable and you can change many parameters - position, window color, content inside etc. Corner Popup is easy to use and you don't need programming skills. As a component Corner Popup needs only jquery to work. It is fully responsive without using any framework.
 
 ## How to use
 
-Usage of Corner Popup is very simple. As first step add jquery and
-Corner Popup files to your project (remember to add appropriate
-files to folders):
+Using Corner Popup is very simple. As the first step, add jquery and Corner Popup files for the project (remember to add appropriate files to folders):
 
 ```
 <link rel="stylesheet" href="css/corner-popup.min.css">
@@ -27,9 +25,7 @@ $('body').cornerpopup({
 </script>
 ```
 
-In step 3 you can (but it is not necessary) set some options
-in previously added code:
-
+In step 3 you can (but it's not necessary) set some options in previously added code:
 ```
 <script>
 $('body').cornerpopup({
