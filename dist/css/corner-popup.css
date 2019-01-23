@@ -243,42 +243,42 @@
  color: #553189;
  font-weight: bold;
 }
-#corner-popup .slide-left {
+.slide-left {
  position: relative;
  right: -400px;
  -webkit-animation: slideleft 0.8s forwards;
  -moz-animation: slideleft 0.8s forwards;
  animation: slideleft 0.8s forwards;
 }
-#corner-popup .slide-left-rev {
+.slide-left-rev {
  position: relative;
  right: -400px;
  -webkit-animation: slideleftrev 0.8s forwards;
  -moz-animation: slideleftrev 0.8s forwards;
  animation: slideleftrev 0.8s forwards;
 }
-#corner-popup .slide-right {
+.slide-right {
  position: relative;
  left: -400px;
  -webkit-animation: slideright 0.8s forwards;
  -moz-animation: slideright 0.8s forwards;
  animation: slideright 0.8s forwards;
 }
-#corner-popup .slide-right-rev {
+.slide-right-rev {
  position: relative;
  left: -400px;
  -webkit-animation: sliderightrev 0.8s forwards;
  -moz-animation: sliderightrev 0.8s forwards;
  animation: sliderightrev 0.8s forwards;
 }
-#corner-popup .slide-top {
+.slide-top {
  position: relative;
  bottom: -400px;
  -webkit-animation: slidetop 0.5s forwards;
  -moz-animation: slidetop 0.5s forwards;
  animation: slidetop 0.5s forwards;
 }
-#corner-popup .slide-top-rev {
+.slide-top-rev {
  position: relative;
  bottom: -400px;
  -webkit-animation: slidetoprev 0.5s forwards;

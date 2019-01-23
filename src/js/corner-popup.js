@@ -10,7 +10,7 @@ $.fn.cornerpopup = function(userOptions) {
     var options = $.extend({
         active: 1,
         variant: 1,
-        slide: 0,
+        slide: 1,
         slidetop: 0,
         timeout: 0,
         closebtn: 1,
@@ -47,17 +47,14 @@ $.fn.cornerpopup = function(userOptions) {
     $('#corner-popup').html(popupvariant).css("display", "flex").hide().fadeIn(800);
     } else if (options.slidetop == 1) {
     $('#corner-popup').addClass('slide-top');
-    $('#corner-popup').html(popupvariant).css("display", "flex").show();
     } else if (options.slide == 1 && options.position == "right") {
     $('#corner-popup').addClass('slide-left');
-    $('#corner-popup').html(popupvariant).css("display", "flex").show();
     } else if (options.slide == 1 && options.position == "left") {
     $('#corner-popup').addClass('slide-right');
-    $('#corner-popup').html(popupvariant).css("display", "flex").show();
     } else if (options.slide == 1 && options.position == "center") {
     $('#corner-popup').addClass('slide-top');
-    $('#corner-popup').html(popupvariant).css("display", "flex").show();
     }
+        $('#corner-popup').html(popupvariant).css("display", "flex").show();
     $(".corner-close").click(function() {
         $("#corner-popup").fadeOut(400);
     });
