@@ -120,6 +120,12 @@ module.exports = function(grunt) {
             src: 'package.json',
             dest: '../git',
             expand: true
+          },
+          {
+            cwd: '',
+            src: 'readme.txt',
+            dest: '../git',
+            expand: true
           }
         ],
       }
@@ -134,4 +140,5 @@ module.exports = function(grunt) {
   grunt.registerTask('dist', ['copy:dist']);
   grunt.registerTask('demo', ['copy:demo']);
   grunt.registerTask('git', ['copy:git']);
+  grunt.registerTask('all', ['copy:dist', 'copy:demo', 'copy:git']); 
 };
