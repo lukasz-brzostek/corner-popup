@@ -5,12 +5,12 @@
  * This work is licensed under the Creative Commons
  * Attribution 4.0 International License:
  * https://creativecommons.org/licenses/by/4.0
- */
+*/
 $.fn.cornerpopup = function(userOptions) {
     var options = $.extend({
         active: 1,
         variant: 1,
-        slide: 1,
+        slide: 0,
         slidetop: 0,
         timeout: 0,
         closebtn: 1,
@@ -54,7 +54,7 @@ $.fn.cornerpopup = function(userOptions) {
     } else if (options.slide == 1 && options.position == "center") {
     $('#corner-popup').addClass('slide-top');
     }
-        $('#corner-popup').html(popupvariant).css("display", "flex").show();
+    $('#corner-popup').html(popupvariant).css("display", "flex").show();
     $(".corner-close").click(function() {
         $("#corner-popup").fadeOut(400);
     });
@@ -90,10 +90,11 @@ $.fn.cornerpopup = function(userOptions) {
             popupvariant = '<div class="hide-mobile col sm-6"><a href="' + options.link1 + '"><img src="' + options.popupimg + '"class="corner-img responsive"></a></div><div class="col xs-12 sm-6"><div class="corner-close"></div><div class="corner-container"><p class="corner-head">' + options.header + '</p><a href="' + options.link1 + '" class="corner-btn">' + options.button1 + '</a></div></div>';
         }
         $('#corner-popup').html(popupvariant);
-        if (options.loadcontent == "no") {} else if (options.variant == 10) {
+        if (options.loadcontent !== "no") { if (options.variant == 10) {
             $(".corner-container").load(options.loadcontent);
         }
-        if (options.closebtn == 1) {} else {
+        }
+        if (options.closebtn !== 1) {
             $(".corner-close").remove();
             $("#corner-popup").css("right", "70px");
             $(".corner-container").css({
@@ -110,55 +111,57 @@ $.fn.cornerpopup = function(userOptions) {
                 "padding-top": "30px"
             });
         }
-        if (options.shadow == 1) {} else {
+        if (options.shadow !== 1) {
             $("#corner-popup").css("box-shadow", "none");
         }
-        if (options.width == "390px") {} else {
+        if (options.width !== "390px") {
             $("#corner-popup").css("width", options.width);
         }
-        if (options.font == "'Open Sans', 'Halvetica', sans-serif") {} else {
+        if (options.font !== "'Open Sans', 'Halvetica', sans-serif") {
             $("#corner-popup").css("font-family", options.font);
         }
-        if (options.colors == "#543189") {} else {
+        if (options.colors !== "#543189") {
             $(".corner-btn, .corner-btn-cookie, .corner-btn-close").css("background-color", options.colors);
             $(".corner-head, .cookie-more").css("color", options.colors);
-            $("#corner-popup").after('<style>.corner-close:after{background-color:' + options.colors + ';}\n.corner-close:before{background-color:' + options.colors + ';} </style>');
+            $("#corner-popup").after('<style>#corner-popup .corner-close:after{background-color:' + options.colors + ';}\n#corner-popup .corner-close:before{background-color:' + options.colors + ';} </style>');
         }
-        if (options.bgcolor == "#fff") {} else {
+        if (options.bgcolor !== "#fff") {
             $("#corner-popup").css("background-color", options.bgcolor);
         }
-        if (options.bordercolor == "#efefef") {} else {
+        if (options.bordercolor !== "#efefef") {
             $("#corner-popup").css("border-color", options.bordercolor);
         }
-        if (options.textcolor == "#181818") {} else {
+        if (options.textcolor !== "#181818") {
             $(".corner-text, .corner-head, .corner-container").css("color", options.textcolor);
         }
-        if (options.iconcolor == "#543189") {} else {
+        if (options.iconcolor !== "#543189") {
             $("body").append("<style></style>");
-            $("style").html('.corner-close:after{background-color:' + options.iconcolor + ';}\n.corner-close:before{background-color:' + options.iconcolor + ';');
+            $("style").html('#corner-popup .corner-close:after{background-color:' + options.iconcolor + ';}\n#corner-popup .corner-close:before{background-color:' + options.iconcolor + ';');
         }
-        if (options.btncolor == "#543189") {} else {
+        if (options.btncolor !== "#543189") {
             $(".corner-btn, .corner-btn-close, .corner-btn-cookie").css("background-color", options.btncolor);
         }
-        if (options.textcolor == "#fff") {} else {
+        if (options.textcolor !== "#fff") {
             $(".corner-btn, .corner-btn-close, .corner-btn-cookie").css("color", options.btntextcolor);
         }
-        if (options.corners == "0px") {} else {
+        if (options.corners !== "0px") {
             $("#corner-popup").css("border-radius", options.corners);
         }
-        if (options.position == "right") {} else if (options.position == "left") {
+        if (options.position !== "right") {
+            if (options.position == "left") {
             $("#corner-popup").css({
                 "right": "",
                 "left": "60px"
             });
-        } else if (options.position == "center") {
+        } else {
             $("#corner-popup").css({
                 "right": "0",
                 "left": "0",
                 "margin": "0 auto"
             });
         }
-        if (options.timeout == 0) {} else {
+        } 
+        if (options.timeout !== 0) {
             setTimeout(function() {
             if (options.slide == 0) {                
             $("#corner-popup").fadeOut(400);
