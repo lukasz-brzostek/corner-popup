@@ -28,7 +28,7 @@ $.fn.cornerpopup = function(userOptions) {
         button3: "OK",
         content: "Your own html here.",
         loadcontent: "no",
-        size: "390px",
+        width: "390px",
         font: "'Open Sans', 'Halvetica', sans-serif",
         colors: "#543189",
         bgcolor: "#fff",
@@ -80,17 +80,14 @@ $.fn.cornerpopup = function(userOptions) {
         } else if (options.variant == 5) {
             popupvariant = '<div class="col sm-12"><div class="corner-close close-change1"></div><div class="corner-container-1"><p class="corner-text">' + options.text2 + '</p></div></div>';
         } else if (options.variant == 6) {
-            options.size = "350px";
             popupvariant = '<div class="col sm-12"><div class="corner-close close-change1"></div><div class="corner-container-2"><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
         } else if (options.variant == 7) {
-            options.size = "350px";
             popupvariant = '<div class="col sm-12"><div class="corner-close close-change1"></div><div class="corner-container-1"><p class="corner-head head-center">' + options.header + '</p></div></div>';
         } else if (options.variant == 8) {
             popupvariant = '<div class="col sm-12"><div class="corner-close close-change1"></div><div class="corner-container-1"><p class="corner-head">' + options.header + '</p><p class="corner-text">' + options.text2 + '</p></div></div>';
         } else if (options.variant == 9) {
             popupvariant = '<div class="col sm-12"><div class="corner-close close-change1"></div><div class="corner-container-2"><p class="corner-head">' + options.header + '</p><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
         } else if (options.variant == 10) {
-            options.size = "350px";
             popupvariant = '<div class="col sm-12"><div class="corner-close close-change1"></div><div class="corner-container">' + options.content + '</div></div>';
         } else {
             popupvariant = '<div class="hide-mobile col sm-6"><a href="' + options.link1 + '"><img src="' + options.popupimg + '"class="corner-img responsive"></a></div><div class="col xs-12 sm-6"><div class="corner-close"></div><div class="corner-container"><p class="corner-head">' + options.header + '</p><a href="' + options.link1 + '" class="corner-btn">' + options.button1 + '</a></div></div>';
@@ -119,8 +116,8 @@ $.fn.cornerpopup = function(userOptions) {
         if (options.shadow == 1) {} else {
             $("#corner-popup").css("box-shadow", "none");
         }
-        if (options.size == "420px") {} else {
-            $("#corner-popup").css("width", options.size);
+        if (options.width == "390px") {} else {
+            $("#corner-popup").css("width", options.width);
         }
         if (options.font == "'Open Sans', 'Halvetica', sans-serif") {} else {
             $("#corner-popup").css("font-family", options.font);
