@@ -88,43 +88,43 @@ module.exports = function(grunt) {
         files: [{
             cwd: 'dist',
             src: '**/*',
-            dest: '../git/dist',
+            dest: '../git/corner-popup/dist',
             expand: true
           },
           {
             cwd: 'src',
             src: '**/*',
-            dest: '../git/src',
+            dest: '../git/corner-popup/src',
             expand: true
           },
           {
             cwd: 'demo',
             src: '**/*',
-            dest: '../git/demo',
+            dest: '../git/corner-popup/demo',
             expand: true
           },
           {
             cwd: 'docs',
             src: '**/*',
-            dest: '../git/docs',
+            dest: '../git/corner-popup/docs',
             expand: true
           },
           {
             cwd: '',
             src: 'Gruntfile.js',
-            dest: '../git',
+            dest: '../git/corner-popup',
             expand: true
           },
           {
             cwd: '',
             src: 'package.json',
-            dest: '../git',
+            dest: '../git/corner-popup',
             expand: true
           },
           {
             cwd: '',
             src: 'readme.txt',
-            dest: '../git',
+            dest: '../git/corner-popup',
             expand: true
           }
         ],
