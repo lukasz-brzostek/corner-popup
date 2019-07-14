@@ -1,4 +1,4 @@
-# Corner Popup v1.13
+# Corner Popup v1.14
 
 Fully customizable pop-up box created to display all types of messages in corner of your browser.
 
@@ -32,8 +32,8 @@ In step 3 you can (but it's not necessary) set some options in previously added 
 ```
 <script>
 $('body').cornerpopup({
-'variant': 1,
-'slide': 1
+variant: 1,
+slide: 1
 });
 </script>
 ```
@@ -70,6 +70,7 @@ btncolor | #543189 | This option changes color of buttons in popup.
 btntextcolor | #fff | This option changes color of text in buttons.
 corners | 0px | This option is used to change popup corner radius.
 position | right | This option is used to change position of the popup. You can change position to left, center or right.
+escClose | 0 | Closes pop-up window after Escape key is pressed. This option works if it is set to 1.
 
 ## License
 
