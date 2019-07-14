@@ -51,7 +51,7 @@ var options = $.extend({
     btnTextColor: "#fff",
     corners: "0px",
     position: "right",
-    escClose: "0",
+    escClose: 0,
 }, options);
 
 // Create/read cookie
@@ -329,7 +329,7 @@ function timeOut(time) {
 // ----------------------
 
     $(document).keyup(function(e) {
-        if (options.escClose != 0 && e.key === "Escape" || e.keyCode == 27) {
+        if (options.escClose != 0 && (e.key === "Escape" || e.keyCode == 27)) {
         popupClose();
         }
     });
