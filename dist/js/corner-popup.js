@@ -1,5 +1,5 @@
 /*
- * Corner Popup v1.14 - 14/7/2019
+ * Corner Popup v1.15 - 26/7/2019
  * Author: Łukasz Brzostek
  *
  * This work is licensed under the Creative Commons
@@ -52,7 +52,11 @@ var options = $.extend({
     corners: "0px",
     position: "right",
     escClose: 0,
+    beforePopup : function(){},
+    afterPopup : function(){},
 }, options);
+
+    cp = "#corner-popup";
 
 // Create/read cookie
 // ------------------
@@ -79,18 +83,19 @@ function readCookie(name) {
 // ----------------------------------------------------------------------------
 
 function popupShow() {
+	options.beforePopup.call(this);
     if (options.slide == 0) {
-    $('#corner-popup').html(popupContent).css("display", "flex").hide().fadeIn(800);
+    $(cp).html(popupContent).css("display", "flex").hide().fadeIn(800);
     } else if (options.slideTop == 1) {
-    $('#corner-popup').addClass('slide-top');
+    $(cp).addClass('slide-top');
     } else if (options.slide == 1 && options.position == "right") {
-    $('#corner-popup').addClass('slide-left');
+    $(cp).addClass('slide-left');
     } else if (options.slide == 1 && options.position == "left") {
-    $('#corner-popup').addClass('slide-right');
+    $(cp).addClass('slide-right');
     } else if (options.slide == 1 && options.position == "center") {
-    $('#corner-popup').addClass('slide-top');
+    $(cp).addClass('slide-top');
     }
-    $('#corner-popup').html(popupContent).css("display", "flex").show();
+    $(cp).html(popupContent).css("display", "flex").show();
 }
 
 // Check slide option, remove popup
@@ -98,8 +103,9 @@ function popupShow() {
 
 function popupClose() {
     if (options.slide == 0) {
-        $("#corner-popup").fadeOut(400, function() {
+        $(cp).fadeOut(400, function() {
         $(this).remove();
+        options.afterPopup.call(this);
     });
     } else {
         slideUndo();
@@ -111,20 +117,21 @@ function popupClose() {
 
 function slideUndo() {
     if (options.slideTop == 1) {
-       $('#corner-popup').removeClass("slide-top").addClass("slide-top-rev");
+       $(cp).removeClass("slide-top").addClass("slide-top-rev");
     } else if (options.slide == 1 && options.position == "right") {
-       $('#corner-popup').removeClass("slide-left").addClass("slide-left-rev");
+       $(cp).removeClass("slide-left").addClass("slide-left-rev");
     } else if (options.slide == 1 && options.position == "left") {
-       $('#corner-popup').removeClass("slide-right").addClass("slide-right-rev");
+       $(cp).removeClass("slide-right").addClass("slide-right-rev");
     } else if (options.slide == 1 && options.position == "center") {
-       $('#corner-popup').removeClass("slide-top").addClass("slide-top-rev");
+       $(cp).removeClass("slide-top").addClass("slide-top-rev");
     }
-    cp = $("#corner-popup");
-    cp.animation = 'none';
-    cp.offsetHeight;
-    cp.animation = null;
-    cp.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
-    cp.remove();
+    cpTemp = $(cp);
+    cpTemp.animation = 'none';
+    cpTemp.offsetHeight;
+    cpTemp.animation = null;
+    cpTemp.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+    cpTemp.remove();
+    options.afterPopup.call(this);
     });
 }
 
@@ -134,8 +141,9 @@ function slideUndo() {
 function timeOut(time) {
     setTimeout(function() {
     if (options.slide == 0) {                
-    $("#corner-popup").fadeOut(400, function() {
+    $(cp).fadeOut(400, function() {
     $(this).remove();
+    options.afterPopup.call(this);
     });
     } else {
     slideUndo();
@@ -143,11 +151,11 @@ function timeOut(time) {
     }, time);
 }
 
-// Check if plugin is already used and remove previous calls
-// ---------------------------------------------------------
+// Check if plugin is already used and remove previous occurrences
+// ---------------------------------------------------------------
 
-    if ($('#corner-popup').length) {
-    $('#corner-popup').remove();
+    if ($(cp).length) {
+    $(cp).remove();
     console.info("Corner Popup already initialized");
     }
 
@@ -164,7 +172,7 @@ function timeOut(time) {
         if (readCookie('cp-cookies-accepted') != 'Yes') {
             popupContent = '<div class="hide-mobile col sm-4"><img src="' + options.cookieImg + '"class="corner-img-cookie responsive"></div><div class="col xs-12 sm-8"><div class="corner-close close-change"></div><div class="corner-container"><p class="corner-text">' + options.text1 + '</p><a class="corner-btn-cookie">' + options.button2 + '</a></div></div>';
         } else {
-            $('#corner-popup').remove();
+            $(cp).remove();
         }
     } else if (options.variant == 3) {
         popupContent = '<div class="hide-mobile col sm-4"><img src="' + options.messageImg + '"class="corner-img-cookie responsive"></div><div class="col xs-12 sm-8"><div class="corner-close close-change"></div><div class="corner-container"><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
@@ -202,7 +210,9 @@ function timeOut(time) {
 
     if (options.closeBtn !== 1) {
         $(".corner-close").remove();
-        $("#corner-popup").css("right", "70px");
+        if ($(window).width() > 768) {
+        $(cp).css("right", "70px");
+        }
         $(".corner-container").css({
             "bottom": "15px",
             "padding-top": "30px"
@@ -222,19 +232,19 @@ function timeOut(time) {
 // -----------------
 
     if (options.shadow !== 1)
-        $("#corner-popup").css("box-shadow", "none");
+        $(cp).css("box-shadow", "none");
 
 // Popup width
 // -----------
 
     if (options.width !== "390px") 
-        $("#corner-popup").css("width", options.width);
+        $(cp).css("width", options.width);
 
 // Popup font
 // ----------
 
     if (options.font !== "'Open Sans', 'Halvetica', sans-serif")
-        $("#corner-popup").css("font-family", options.font);
+        $(cp).css("font-family", options.font);
 
 // Popup colors
 // ------------
@@ -242,20 +252,20 @@ function timeOut(time) {
     if (options.colors !== "#543189") {
         $(".corner-btn, .corner-btn-cookie, .corner-btn-close").css("background-color", options.colors);
         $(".corner-head, .cookie-more").css("color", options.colors);
-        $("#corner-popup").after('<style>#corner-popup .corner-close:after{background-color:' + options.colors + ';}\n#corner-popup .corner-close:before{background-color:' + options.colors + ';} </style>');
+        $(cp).after('<style>#corner-popup .corner-close:after{background-color:' + options.colors + ';}\n#corner-popup .corner-close:before{background-color:' + options.colors + ';} </style>');
     }
 
 // Popup background color
 // ----------------------
 
     if (options.bgColor !== "#fff")
-        $("#corner-popup").css("background-color", options.bgColor);
+        $(cp).css("background-color", options.bgColor);
 
 // Popup border color
 // ------------------
 
     if (options.borderColor !== "#efefef")
-        $("#corner-popup").css("border-color", options.borderColor);
+        $(cp).css("border-color", options.borderColor);
 
 // Popup text color
 // ----------------
@@ -287,19 +297,19 @@ function timeOut(time) {
 // -------------------
 
     if (options.corners !== "0px")
-        $("#corner-popup").css("border-radius", options.corners);
+        $(cp).css("border-radius", options.corners);
 
 // Popup position
 // --------------
 
     if (options.position !== "right") {
-        if (options.position == "left") {
-        $("#corner-popup").css({
-            "right": "",
+        if (options.position == "left" && $(window).width() > 768) {
+        $(cp).css({
+            "right": "0",
             "left": "60px"
         });
     } else {
-        $("#corner-popup").css({
+        $(cp).css({
             "right": "0",
             "left": "0",
             "margin": "0 auto"
@@ -310,9 +320,8 @@ function timeOut(time) {
 // Popup timeout
 // -------------    
 
-    if (options.timeOut !== 0) {
-       timeOut(options.timeOut);
-    }
+    if (options.timeOut !== 0)
+        timeOut(options.timeOut);
 
 // Popup close
 // ----------- 
@@ -329,11 +338,17 @@ function timeOut(time) {
 // ----------------------
 
     $(document).keyup(function(e) {
-        if (options.escClose != 0 && (e.key === "Escape" || e.keyCode == 27)) {
+        if (options.escClose != 0 && (e.key === "Escape" || e.keyCode == 27))
         popupClose();
-        }
     });
 
-  }
+// Public functions
+// ----------------
+
+    $.fn.cornerpopup.popupClose = function() {
+        popupClose();
+    }
+
+}
 };
 })(jQuery);

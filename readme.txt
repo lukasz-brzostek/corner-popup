@@ -1,5 +1,5 @@
 ﻿
-Corner Popup v1.13 - 17/1/2019
+Corner Popup v1.15 - 26/7/2019
 Author: Łukasz Brzostek
 
 Website: https://espritdesign.pl/corner-popup
@@ -39,7 +39,7 @@ files to folders):
 As step 2 call script from your website code:
 
 <script>
-$('body').cornerpopup({
+$.fn.cornerpopup({
 });
 </script>
 
@@ -47,13 +47,15 @@ In step 3 you can (but it's not necessary) set some options
 in previously added code:
 
 <script>
-$('body').cornerpopup({
+$.fn.cornerpopup({
 variant: 1,
 slide: 1
 });
 </script>
 
+---------------------------------------
 All available options with description:
+---------------------------------------
 
 Option      Default 	Description
 ------      -------     -----------
@@ -142,6 +144,33 @@ position      right     This option is used to change position of the popup.
 
 escClose      0		Closes pop-up window after Escape key is pressed. 
 			This option works if it is set to 1.
+
+--------------------------------------------------
+Corner Popup provides public methods (e.g. usage):
+--------------------------------------------------
+
+$.fn.cornerpopup.popupClose();
+
+Method	     Description
+------	     -----------
+popupClose   Closes pop-up window whenever you want.
+
+--------------------
+Corner Popup events:
+--------------------
+
+<script>
+$.fn.cornerpopup({
+variant: 1,
+beforePopup: function() {
+// Your code here
+}
+</script>
+
+Event         Description
+-----         -----------
+beforePopup   Your code will work before popup is shown.
+afterPopup    Your code will work after pop-up is closed.
 
 ----------
 3. License
