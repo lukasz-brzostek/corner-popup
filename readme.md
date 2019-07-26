@@ -77,9 +77,11 @@ Corner Popup provides public methods (e.g. usage):
 $.fn.cornerpopup.popupClose();
 ```
 
+<div class="mydiv1">
 Method | Description
 ------ | -----------
 popupClose | Closes pop-up window whenever you want.
+</div>
 
 Corner Popup events:
 ```
@@ -108,3 +110,7 @@ International License: https://creativecommons.org/licenses/by/4.0
 
 Have a question about usage? Found a bug?<br>
 Feel free to write a message to me: info@espritdesign.pl
+
+.mydiv1 table {
+  width:100%;
+}
