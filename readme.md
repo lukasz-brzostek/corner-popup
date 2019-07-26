@@ -77,7 +77,7 @@ Corner Popup provides public methods (e.g. usage):
 $.fn.cornerpopup.popupClose();
 ```
 
-Method Description
+Method | Description
 ------ | -----------
 popupClose | Closes pop-up window whenever you want.
 
@@ -92,7 +92,7 @@ beforePopup: function() {
 </script>
 ```
 
-Event Description
+Event | Description
 ------ | -----------
 beforePopup | Your code will work before popup is shown.
 afterPopup | Your code will work after pop-up is closed.
