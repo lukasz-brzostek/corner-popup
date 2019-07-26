@@ -23,7 +23,7 @@ In step 2 call script from your website code:
 
 ```
 <script>
-$('body').cornerpopup({
+$.fn.cornerpopup({
 });
 </script>
 ```
@@ -31,7 +31,7 @@ $('body').cornerpopup({
 In step 3 you can (but it's not necessary) set some options in previously added code:
 ```
 <script>
-$('body').cornerpopup({
+$.fn.cornerpopup({
 variant: 1,
 slide: 1
 });
@@ -79,7 +79,7 @@ $.fn.cornerpopup.popupClose();
 
 Method | Description
 ------ | -----------
-popupClose | Closes pop-up window whenever you want.                              
+popupClose | Closes pop-up window whenever you want.
 
 Corner Popup events:
 ```
