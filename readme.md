@@ -79,7 +79,7 @@ $.fn.cornerpopup.popupClose();
 
 Method | Description
 ------ | -----------
-popupClose | Closes pop-up window whenever you want.
+popupClose | Closes pop-up window whenever you want.                              
 
 Corner Popup events:
 ```
