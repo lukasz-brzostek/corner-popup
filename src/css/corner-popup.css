@@ -29,50 +29,50 @@
 #corner-popup .hide-mobile {
  display: none !important;
 }
-#corner-popup .xs-12 {
+#corner-popup .p-xs-12 {
  width: 100%;
 }
 }
 
 @media (min-width: 768px) {
-#corner-popup .sm-1 {
+#corner-popup .p-sm-1 {
  width: 8.33333333%;
 }
-#corner-popup .sm-2 {
+#corner-popup .p-sm-2 {
  width: 16.66666667%;
 }
-#corner-popup .sm-3 {
+#corner-popup .p-sm-3 {
  width: 25%;
 }
-#corner-popup .sm-4 {
+#corner-popup .p-sm-4 {
  width: 33.33333333%;
 }
-#corner-popup .sm-5 {
+#corner-popup .p-sm-5 {
  width: 41.66666667%;
 }
-#corner-popup .sm-6 {
+#corner-popup .p-sm-6 {
  width: 50%;
 }
-#corner-popup .sm-7 {
+#corner-popup .p-sm-7 {
  width: 58.33333333%;
 }
-#corner-popup .sm-8 {
+#corner-popup .p-sm-8 {
  width: 66.66666667%;
 }
-#corner-popup .sm-9 {
+#corner-popup .p-sm-9 {
  width: 75%;
 }
-#corner-popup .sm-10 {
+#corner-popup .p-sm-10 {
  width: 83.33333333%;
 }
-#corner-popup .sm-11 {
+#corner-popup .p-sm-11 {
  width: 91.66666667%;
 }
-#corner-popup .sm-12 {
+#corner-popup .p-sm-12 {
  width: 100%;
 }
 }
-#corner-popup .col {
+#corner-popup .p-col {
  float: left;
  position: relative;
  min-height: 1px;

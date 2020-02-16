@@ -170,28 +170,28 @@ function timeOut(time) {
 
     if (options.variant == 2) {
         if (readCookie('cp-cookies-accepted') != 'Yes') {
-            popupContent = '<div class="hide-mobile col sm-4"><img src="' + options.cookieImg + '"class="corner-img-cookie responsive"></div><div class="col xs-12 sm-8"><div class="corner-close close-change"></div><div class="corner-container"><p class="corner-text">' + options.text1 + '</p><a class="corner-btn-cookie">' + options.button2 + '</a></div></div>';
+            popupContent = '<div class="hide-mobile p-col p-sm-4"><img src="' + options.cookieImg + '"class="corner-img-cookie responsive"></div><div class="p-col p-xs-12 p-sm-8"><div class="corner-close close-change"></div><div class="corner-container"><p class="corner-text">' + options.text1 + '</p><a class="corner-btn-cookie">' + options.button2 + '</a></div></div>';
         } else {
             $(cp).remove();
         }
     } else if (options.variant == 3) {
-        popupContent = '<div class="hide-mobile col sm-4"><img src="' + options.messageImg + '"class="corner-img-cookie responsive"></div><div class="col xs-12 sm-8"><div class="corner-close close-change"></div><div class="corner-container"><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
+        popupContent = '<div class="hide-mobile p-col p-sm-4"><img src="' + options.messageImg + '"class="corner-img-cookie responsive"></div><div class="p-col p-xs-12 p-sm-8"><div class="corner-close close-change"></div><div class="corner-container"><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
     } else if (options.variant == 4) {
-        popupContent = '<div class="hide-mobile col sm-4"><img src="' + options.messageImg + '"class="corner-img-cookie responsive"></div><div class="col xs-12 sm-8"><div class="corner-close close-change"></div><div class="corner-container-1"><p class="corner-text">' + options.text2 + '</p></div></div>';
+        popupContent = '<div class="hide-mobile p-col p-sm-4"><img src="' + options.messageImg + '"class="corner-img-cookie responsive"></div><div class="p-col p-xs-12 p-sm-8"><div class="corner-close close-change"></div><div class="corner-container-1"><p class="corner-text">' + options.text2 + '</p></div></div>';
     } else if (options.variant == 5) {
-        popupContent = '<div class="col sm-12"><div class="corner-close close-change1"></div><div class="corner-container-1"><p class="corner-text">' + options.text2 + '</p></div></div>';
+        popupContent = '<div class="p-col p-sm-12"><div class="corner-close close-change1"></div><div class="corner-container-1"><p class="corner-text">' + options.text2 + '</p></div></div>';
     } else if (options.variant == 6) {
-        popupContent = '<div class="col sm-12"><div class="corner-close close-change1"></div><div class="corner-container-2"><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
+        popupContent = '<div class="p-col p-sm-12"><div class="corner-close close-change1"></div><div class="corner-container-2"><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
     } else if (options.variant == 7) {
-        popupContent = '<div class="col sm-12"><div class="corner-close close-change1"></div><div class="corner-container-1"><p class="corner-head head-center">' + options.header + '</p></div></div>';
+        popupContent = '<div class="p-col p-sm-12"><div class="corner-close close-change1"></div><div class="corner-container-1"><p class="corner-head head-center">' + options.header + '</p></div></div>';
     } else if (options.variant == 8) {
-        popupContent = '<div class="col sm-12"><div class="corner-close close-change1"></div><div class="corner-container-1"><p class="corner-head">' + options.header + '</p><p class="corner-text">' + options.text2 + '</p></div></div>';
+        popupContent = '<div class="p-col p-sm-12"><div class="corner-close close-change1"></div><div class="corner-container-1"><p class="corner-head">' + options.header + '</p><p class="corner-text">' + options.text2 + '</p></div></div>';
     } else if (options.variant == 9) {
-        popupContent = '<div class="col sm-12"><div class="corner-close close-change1"></div><div class="corner-container-2"><p class="corner-head">' + options.header + '</p><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
+        popupContent = '<div class="p-col p-sm-12"><div class="corner-close close-change1"></div><div class="corner-container-2"><p class="corner-head">' + options.header + '</p><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
     } else if (options.variant == 10) {
-        popupContent = '<div class="col sm-12"><div class="corner-close close-change1"></div><div class="corner-container">' + options.content + '</div></div>';
+        popupContent = '<div class="p-col p-sm-12"><div class="corner-close close-change1"></div><div class="corner-container">' + options.content + '</div></div>';
     } else {
-        popupContent = '<div class="hide-mobile col sm-6"><a href="' + options.link1 + '"><img src="' + options.popupImg + '"class="corner-img responsive"></a></div><div class="col xs-12 sm-6"><div class="corner-close"></div><div class="corner-container"><p class="corner-head">' + options.header + '</p><a href="' + options.link1 + '" class="corner-btn">' + options.button1 + '</a></div></div>';
+        popupContent = '<div class="hide-mobile p-col p-sm-6"><a href="' + options.link1 + '"><img src="' + options.popupImg + '"class="corner-img responsive"></a></div><div class="p-col p-xs-12 p-sm-6"><div class="corner-close"></div><div class="corner-container"><p class="corner-head">' + options.header + '</p><a href="' + options.link1 + '" class="corner-btn">' + options.button1 + '</a></div></div>';
     }
 
 // Popup show 
