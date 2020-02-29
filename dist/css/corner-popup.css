@@ -1,5 +1,5 @@
 /*
- * Corner Popup v1.15 - 26/7/2019
+ * Corner Popup v1.16 - 29/2/2020
  * Author: Łukasz Brzostek
  *
  * This work is licensed under the Creative Commons
@@ -141,8 +141,10 @@
 }
 #corner-popup .corner-close {
  position: relative;
- bottom: 33px;
- left: 94%;
+ top:-31px;
+ margin-bottom: auto;
+ margin-left: auto;
+ right: -46px;
  width: 34px;
  height: 34px;
  cursor: pointer;
@@ -150,17 +152,9 @@
  background: #fff;
  box-shadow: 3px 5px 10px 0px rgba(0, 0, 0, 0.09);
 }
-
-@media (min-width: 768px) {
+@media (max-width: 768px) {
 #corner-popup .corner-close {
- bottom: 31px;
- left: 108%;
-}
-#corner-popup .close-change {
- left: 106%;
-}
-#corner-popup .close-change1 {
- left: 104%;
+ right: -14px;
 }
 }
 #corner-popup .corner-close:before, #corner-popup .corner-close:after {

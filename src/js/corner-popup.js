@@ -1,5 +1,5 @@
 /*
- * Corner Popup v1.15 - 26/7/2019
+ * Corner Popup v1.16 - 29/2/2020
  * Author: Łukasz Brzostek
  *
  * This work is licensed under the Creative Commons
@@ -165,33 +165,52 @@ function timeOut(time) {
     if (options.active != 0) {
     $('<div/>', { id: 'corner-popup', class: 'popup-xs' }).appendTo('body');
 
+// Check popup width and setup columns
+// -----------------------------------
+
+    if (options.width > 700) {
+        columnOne = 'p-sm-2';
+        columnTwo = 'p-sm-10'; 
+    } else if (options.width > 450) {
+        columnOne = 'p-sm-3';
+        columnTwo = 'p-sm-9'; 
+    } else {
+     if (options.variant == 1){
+        columnOne = 'p-sm-6';
+        columnTwo = 'p-sm-6';     	
+     } else {
+        columnOne = 'p-sm-4';
+        columnTwo = 'p-sm-8';
+    }
+    }
+
 // Check variant and insert proper content into variable
 // -----------------------------------------------------
 
     if (options.variant == 2) {
         if (readCookie('cp-cookies-accepted') != 'Yes') {
-            popupContent = '<div class="hide-mobile p-col p-sm-4"><img src="' + options.cookieImg + '"class="corner-img-cookie responsive"></div><div class="p-col p-xs-12 p-sm-8"><div class="corner-close close-change"></div><div class="corner-container"><p class="corner-text">' + options.text1 + '</p><a class="corner-btn-cookie">' + options.button2 + '</a></div></div>';
+            popupContent = '<div class="hide-mobile p-col ' + columnOne + '""><img src="' + options.cookieImg + '"class="corner-img-cookie responsive"></div><div class="p-col p-xs-12 ' + columnTwo + '""><div class="corner-close"></div><div class="corner-container"><p class="corner-text">' + options.text1 + '</p><a class="corner-btn-cookie">' + options.button2 + '</a></div></div>';
         } else {
             $(cp).remove();
         }
     } else if (options.variant == 3) {
-        popupContent = '<div class="hide-mobile p-col p-sm-4"><img src="' + options.messageImg + '"class="corner-img-cookie responsive"></div><div class="p-col p-xs-12 p-sm-8"><div class="corner-close close-change"></div><div class="corner-container"><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
+        popupContent = '<div class="hide-mobile p-col ' + columnOne + '"><img src="' + options.messageImg + '"class="corner-img-cookie responsive"></div><div class="p-col p-xs-12 ' + columnTwo + '""><div class="corner-close"></div><div class="corner-container"><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
     } else if (options.variant == 4) {
-        popupContent = '<div class="hide-mobile p-col p-sm-4"><img src="' + options.messageImg + '"class="corner-img-cookie responsive"></div><div class="p-col p-xs-12 p-sm-8"><div class="corner-close close-change"></div><div class="corner-container-1"><p class="corner-text">' + options.text2 + '</p></div></div>';
+        popupContent = '<div class="hide-mobile p-col ' + columnOne + '""><img src="' + options.messageImg + '"class="corner-img-cookie responsive"></div><div class="p-col p-xs-12 ' + columnTwo + '""><div class="corner-close"></div><div class="corner-container-1"><p class="corner-text">' + options.text2 + '</p></div></div>';
     } else if (options.variant == 5) {
-        popupContent = '<div class="p-col p-sm-12"><div class="corner-close close-change1"></div><div class="corner-container-1"><p class="corner-text">' + options.text2 + '</p></div></div>';
+        popupContent = '<div class="p-col p-xs-12 p-sm-12"><div class="corner-close"></div><div class="corner-container-1"><p class="corner-text">' + options.text2 + '</p></div></div>';
     } else if (options.variant == 6) {
-        popupContent = '<div class="p-col p-sm-12"><div class="corner-close close-change1"></div><div class="corner-container-2"><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
+        popupContent = '<div class="p-col p-xs-12 p-sm-12"><div class="corner-close"></div><div class="corner-container-2"><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
     } else if (options.variant == 7) {
-        popupContent = '<div class="p-col p-sm-12"><div class="corner-close close-change1"></div><div class="corner-container-1"><p class="corner-head head-center">' + options.header + '</p></div></div>';
+        popupContent = '<div class="p-col p-xs-12 p-sm-12"><div class="corner-close"></div><div class="corner-container-1"><p class="corner-head head-center">' + options.header + '</p></div></div>';
     } else if (options.variant == 8) {
-        popupContent = '<div class="p-col p-sm-12"><div class="corner-close close-change1"></div><div class="corner-container-1"><p class="corner-head">' + options.header + '</p><p class="corner-text">' + options.text2 + '</p></div></div>';
+        popupContent = '<div class="p-col p-xs-12 p-sm-12"><div class="corner-close"></div><div class="corner-container-1"><p class="corner-head">' + options.header + '</p><p class="corner-text">' + options.text2 + '</p></div></div>';
     } else if (options.variant == 9) {
-        popupContent = '<div class="p-col p-sm-12"><div class="corner-close close-change1"></div><div class="corner-container-2"><p class="corner-head">' + options.header + '</p><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
+        popupContent = '<div class="p-col p-xs-12 p-sm-12"><div class="corner-close"></div><div class="corner-container-2"><p class="corner-head">' + options.header + '</p><p class="corner-text">' + options.text2 + '</p><a href="' + options.link2 + '" class="corner-btn-close">' + options.button3 + '</a></div></div>';
     } else if (options.variant == 10) {
-        popupContent = '<div class="p-col p-sm-12"><div class="corner-close close-change1"></div><div class="corner-container">' + options.content + '</div></div>';
+        popupContent = '<div class="p-col p-xs-12 p-sm-12"><div class="corner-close"></div><div class="corner-container">' + options.content + '</div></div>';
     } else {
-        popupContent = '<div class="hide-mobile p-col p-sm-6"><a href="' + options.link1 + '"><img src="' + options.popupImg + '"class="corner-img responsive"></a></div><div class="p-col p-xs-12 p-sm-6"><div class="corner-close"></div><div class="corner-container"><p class="corner-head">' + options.header + '</p><a href="' + options.link1 + '" class="corner-btn">' + options.button1 + '</a></div></div>';
+        popupContent = '<div class="hide-mobile p-col ' + columnOne + '""><a href="' + options.link1 + '"><img src="' + options.popupImg + '"class="corner-img responsive"></a></div><div class="p-col p-xs-12 ' + columnTwo + '""><div class="corner-close"></div><div class="corner-container"><p class="corner-head">' + options.header + '</p><a href="' + options.link1 + '" class="corner-btn">' + options.button1 + '</a></div></div>';
     }
 
 // Popup show 
@@ -239,6 +258,14 @@ function timeOut(time) {
 
     if (options.width !== "390px") 
         $(cp).css("width", options.width);
+
+    window.onresize = function(event) {
+      if ($(window).width() < 768) {
+      $(cp).css("width", '100%');	
+      } else {
+      $(cp).css("width", options.width);	
+      }
+    };
 
 // Popup font
 // ----------
@@ -345,8 +372,16 @@ function timeOut(time) {
 // Public functions
 // ----------------
 
-    $.fn.cornerpopup.popupClose = function() {
-        popupClose();
+    $.fn.cornerpopup.popupClose = function(timing) {
+    	setTimeout(popupClose, timing)
+    }
+
+    $.fn.cornerpopup.popupHide = function(timing) {
+        $(cp).delay(timing).fadeOut(400);
+    }
+
+    $.fn.cornerpopup.popupShow = function(timing) {
+        $(cp).delay(timing).fadeIn(800);
     }
 
 }
