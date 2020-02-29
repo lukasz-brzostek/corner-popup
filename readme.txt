@@ -1,5 +1,5 @@
 ﻿
-Corner Popup v1.15 - 26/7/2019
+Corner Popup v1.16 - 29/2/2020
 Author: Łukasz Brzostek
 
 Website: https://espritdesign.pl/corner-popup
@@ -154,6 +154,11 @@ $.fn.cornerpopup.popupClose();
 Method	     Description
 ------	     -----------
 popupClose   Closes pop-up window whenever you want.
+popupHide   Hides pop-up window (it can be restored at any time).
+popupShow   Shows hidden pop-up window.
+
+You can add delay for each method. Just call the method like this: 
+$.fn.cornerpopup.popupShow(100); - where 100 is the time in milliseconds.
 
 --------------------
 Corner Popup events:

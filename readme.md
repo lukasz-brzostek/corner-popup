@@ -1,4 +1,4 @@
-# Corner Popup v1.15
+# Corner Popup v1.16
 
 Fully customizable pop-up box created to display all types of messages in corner of your browser.
 
@@ -80,6 +80,10 @@ $.fn.cornerpopup.popupClose();
 Method | Description
 ------ | -----------
 popupClose | Closes pop-up window whenever you want.
+popupHide | Hides pop-up window (it can be restored at any time).
+popupShow | Shows hidden pop-up window.
+
+You can add delay for each method. Just call the method like this: $.fn.cornerpopup.popupShow(100); - where 100 is the time in milliseconds.
 
 Corner Popup events:
 ```
