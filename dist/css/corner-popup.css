@@ -176,7 +176,7 @@
 }
 #corner-popup .corner-container {
  position: relative;
- bottom: 17px;
+ bottom: 10px; 
 }
 #corner-popup .corner-container-1 {
  position: relative;
@@ -190,6 +190,12 @@
  padding: 7px;
  padding-left: 12px;
  padding-right: 12px;
+}
+#corner-popup .corner-container-3 {
+ position: relative;
+ bottom: 10px; 
+ padding-top: 20px;
+ padding-bottom: 20px;
 }
 #corner-popup .corner-head {
  font-weight: 500;
