@@ -229,7 +229,7 @@ function timeOut(time) {
 // --------------------------
 
     if (options.variant == 10 && options.loadContent !== "no") 
-    $(".corner-container").load(options.loadContent);
+    $(".corner-container-2").load(options.loadContent);
 
 // Close button visibility
 // -----------------------
