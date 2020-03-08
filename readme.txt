@@ -1,5 +1,5 @@
 ﻿
-Corner Popup v1.16 - 29/2/2020
+Corner Popup v1.17 - 8/3/2020
 Author: Łukasz Brzostek
 
 Website: https://espritdesign.pl/corner-popup
@@ -139,11 +139,17 @@ btnTextColor  #fff	This option changes color of text in buttons.
 
 corners	      0px	This option is used to change popup corner radius.
 
+padding       0         This option is used to change padding inside of the popup. 
+                        You can change it to any value.
+
 position      right     This option is used to change position of the popup. 
                         You can change position to left, center or right.
 
 escClose      0		Closes pop-up window after Escape key is pressed. 
 			This option works if it is set to 1.
+
+stickToBottom 0         Removes the pop-up margin and makes it stick to the 
+                        edge of the browser.
 
 --------------------------------------------------
 Corner Popup provides public methods (e.g. usage):
@@ -174,8 +180,9 @@ beforePopup: function() {
 
 Event         Description
 -----         -----------
-beforePopup   Your code will work before popup is shown.
-afterPopup    Your code will work after pop-up is closed.
+beforePopup   Your code will work before the popup window appears.
+afterPopup    Your code will work after closing the pop-up window.
+onBtnClick    Your code will work after pressing the popup button.
 
 ----------
 3. License

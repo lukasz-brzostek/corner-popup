@@ -176,7 +176,7 @@
 }
 #corner-popup .corner-container {
  position: relative;
- bottom: 10px; 
+ bottom: 20px;
 }
 #corner-popup .corner-container-1 {
  position: relative;
@@ -220,7 +220,6 @@
  font-size: 12px;
  line-height: 18px;
  word-break: break-word;
- margin-top: -5px;
 }
 
 #corner-popup .corner-btn, 

@@ -1,4 +1,4 @@
-# Corner Popup v1.16
+# Corner Popup v1.17
 
 Fully customizable pop-up box created to display all types of messages in corner of your browser.
 
@@ -70,7 +70,9 @@ btnColor | #543189 | This option changes color of buttons in popup.
 btnTextColor | #fff | This option changes color of text in buttons.
 corners | 0px | This option is used to change popup corner radius.
 position | right | This option is used to change position of the popup. You can change position to left, center or right.
+padding | 0 | This option is used to change padding inside of the popup. You can change it to any value.
 escClose | 0 | Closes pop-up window after Escape key is pressed. This option works if it is set to 1.
+stickToBottom | 0 | Removes the pop-up margin and makes it stick to the edge of the browser.
 
 Corner Popup provides public methods (e.g. usage):
 ```
@@ -98,8 +100,9 @@ beforePopup: function() {
 
 Event | Description
 ------ | -----------
-beforePopup | Your code will work before popup is shown.
-afterPopup | Your code will work after pop-up is closed.
+beforePopup | Your code will work before the popup window appears.
+afterPopup | Your code will work after closing the pop-up window.
+onBtnClick | Your code will work after pressing the popup button.
 
 ## License
 

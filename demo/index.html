@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Corner Popup Demo - v 1.16</title>
+<title>Corner Popup Demo - v 1.17</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/main.min.css">
 <link rel="stylesheet" href="css/corner-popup.min.css">
@@ -64,6 +64,13 @@
     <div class="hr-1"></div>
     <div class="row">
       <div class="col-md-2 col-lg-2">
+        <div class="checkbox checbox-switch">
+          <label>
+            <input type="checkbox" class="stick" />
+            <span></span>Stick to bottom</label>
+        </div>
+      </div>
+      <div class="col-md-2 col-lg-2">
         <div class="form-group">
           <input type="text" class="timeoutset" placeholder="Timeout (ms)">
         </div>
@@ -88,14 +95,14 @@
           <input type="text" class="img2set" placeholder="Cookies image (url)">
         </div>
       </div>
+    </div>
+    <div class="hr"></div>
+    <div class="row">
       <div class="col-md-2 col-lg-2">
         <div class="form-group">
           <input type="text" class="img3set" placeholder="Message image (url)">
         </div>
       </div>
-    </div>
-    <div class="hr"></div>
-    <div class="row">
       <div class="col-md-2 col-lg-2">
         <div class="form-group">
           <input type="text" class="headerset" placeholder="Header">
@@ -131,14 +138,14 @@
           <input type="text" class="widthset" placeholder="Width">
         </div>
       </div>
+    </div>
+    <div class="hr"></div>
+    <div class="row">
       <div class="col-md-2 col-lg-2">
         <div class="form-group">
           <input type="text" class="cornerset" placeholder="Corner radius">
         </div>
       </div>
-    </div>
-    <div class="hr"></div>
-    <div class="row">
       <div class="col-md-2 col-lg-2">
         <div class="form-group">
           <input type="text" class="contentset" placeholder="Content (html)">
@@ -174,6 +181,9 @@
           <input type="text" class="textcolorset" placeholder="#181818">
         </div>
       </div>
+    </div>
+    <div class="hr"></div>
+    <div class="row">
       <div class="col-md-1 col-lg-1">
         <div class="form-group">
           <input type="text" class="iconset" placeholder="#543189">
@@ -184,9 +194,6 @@
           <input type="text" class="btncolorset" placeholder="#543189">
         </div>
       </div>
-    </div>
-    <div class="hr"></div>
-    <div class="row">
       <div class="col-md-1 col-lg-1">
         <div class="form-group">
           <input type="text" class="btntextcolorset" placeholder="#fff">
@@ -197,7 +204,12 @@
           <input type="text" class="positionset" placeholder="Position">
         </div>
       </div>
-      <div class="col-md-6 col-lg-6">
+      <div class="col-md-2 col-lg-2">
+        <div class="form-group">
+          <input type="text" class="paddingset" placeholder="Padding">
+        </div>
+      </div>
+      <div class="col-md-2 col-lg-2">
         <div class="form-group">
           <div class="copy-info">Copied!</div>
         </div>
@@ -216,7 +228,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-12"><a href=""><img src="img/img-2.png" class="center-block img-circle logo"></a>
-        <p class="heading">Corner Popup<span class="version">v 1.16</span></p>
+        <p class="heading">Corner Popup<span class="version">v 1.17</span></p>
       </div>
       <div class="col-xs-12 col-sm-12">
         <select class="selectpicker" data-width="100%" id="select" onchange="getvariant(this)">

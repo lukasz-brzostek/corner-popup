@@ -1,5 +1,5 @@
 /*
- * Corner Popup v1.16 - 29/2/2020
+ * Corner Popup v1.17 - 8/3/2020
  * Author: Łukasz Brzostek
  *
  * This work is licensed under the Creative Commons
@@ -50,10 +50,13 @@ var options = $.extend({
     btnColor: "#543189",
     btnTextColor: "#fff",
     corners: "0px",
+    padding: 0,
     position: "right",
     escClose: 0,
+    stickToBottom: 0,
     beforePopup : function(){},
     afterPopup : function(){},
+    onBtnClick : function(){},
 }, options);
 
     cp = "#corner-popup";
@@ -83,7 +86,7 @@ function readCookie(name) {
 // ----------------------------------------------------------------------------
 
 function popupShow() {
-	options.beforePopup.call(this);
+    options.beforePopup.call(this);
     if (options.slide == 0) {
     $(cp).html(popupContent).css("display", "flex").hide().fadeIn(800);
     } else if (options.slideTop == 1) {
@@ -169,22 +172,27 @@ function timeOut(time) {
 // ------------------------------------------------
 
     if (options.width.substr(-1) == "%") { 
-    	widthPercent = true;
-    	noPercents = options.width.slice(0, -1);
+        widthPercent = true;
+        noPercents = options.width.slice(0, -1);
     } else {
         widthPercent = false;
+        if (options.width.match(/^\d+$/)) {
+        noUnit = options.width;
+        } else {
+        noUnit = options.width.replace(/\D/g,'');
+        }
     }
 
-    if (options.width > 700 || widthPercent == true && noPercents > 50) {
+    if (noUnit > 700 || widthPercent == true && noPercents > 50) {
         columnOne = 'p-sm-2';
         columnTwo = 'p-sm-10';
-    } else if (options.width > 450 || widthPercent == true && noPercents > 25) {
+    } else if (noUnit > 450 || widthPercent == true && noPercents > 25) {
         columnOne = 'p-sm-3';
         columnTwo = 'p-sm-9';
     } else {
      if (options.variant == 1){
         columnOne = 'p-sm-6';
-        columnTwo = 'p-sm-6';  	
+        columnTwo = 'p-sm-6';   
      } else {
         columnOne = 'p-sm-4';
         columnTwo = 'p-sm-8';
@@ -268,9 +276,9 @@ function timeOut(time) {
 
     window.onresize = function(event) {
       if ($(window).width() < 768) {
-      $(cp).css("width", '100%');	
+      $(cp).css("width", '100%');   
       } else {
-      $(cp).css("width", options.width);	
+      $(cp).css("width", options.width);    
       }
     };
 
@@ -333,6 +341,17 @@ function timeOut(time) {
     if (options.corners !== "0px")
         $(cp).css("border-radius", options.corners);
 
+// Popup padding
+// -------------
+
+    if (options.padding !== 0) {
+        if (options.variant >= 5) {
+        $('.corner-container, .corner-container-1, .corner-container-2, .corner-container-3').css({"padding": options.padding});
+        } else 
+        $('.corner-container, .corner-container-1, .corner-container-2, .corner-container-3').css({"padding": options.padding, "padding-left": "0px"});
+        $('.p-col').first().css("padding-left", options.padding);
+    }
+
 // Popup position
 // --------------
 
@@ -351,6 +370,24 @@ function timeOut(time) {
     }
     }
 
+// Stick to bottom option
+// ----------------------
+
+    if (options.stickToBottom !== 0 && $(window).width() > 768) {
+        $(cp).css({
+            "bottom": "0"
+        });
+    if (options.position == "right") {
+        $(cp).css({
+            "right": "0"
+        });
+    } else if (options.position == "left") {
+        $(cp).css({
+            "left": "0"
+        });
+    }
+    }
+
 // Popup timeout
 // -------------    
 
@@ -360,13 +397,29 @@ function timeOut(time) {
 // Popup close
 // ----------- 
 
-    $(".corner-close, .corner-btn-close, .corner-btn-cookie").click(function() {
+    $(".corner-close").click(function() {
         popupClose();       
+    });
+
+    $(".corner-btn, .corner-btn-close, .corner-btn-cookie").click(function() {
+        if (options.onBtnClick == 'function(){}') {
+        popupClose();  
+        }     
     });
 
     $(".corner-btn-cookie").click(function() {
         createCookie('cp-cookies-accepted', 'Yes', 365);
     });
+
+// onBtnClick event trigger
+// ---------------------------
+
+    $('.corner-btn, .corner-btn-close, .corner-btn-cookie').click(function(e) {
+        if (options.onBtnClick != 'function(){}') {
+        e.preventDefault();
+        options.onBtnClick.call(this);
+        }
+    });  
 
 // Close on ESC key press
 // ----------------------
@@ -380,7 +433,7 @@ function timeOut(time) {
 // ----------------
 
     $.fn.cornerpopup.popupClose = function(timing) {
-    	setTimeout(popupClose, timing)
+        setTimeout(popupClose, timing);
     }
 
     $.fn.cornerpopup.popupHide = function(timing) {
