@@ -1,5 +1,5 @@
 /*
- * Corner Popup v1.18 - 10/3/2020
+ * Corner Popup v1.18 - 11/3/2020
  * Author: Łukasz Brzostek
  *
  * This work is licensed under the Creative Commons
@@ -55,6 +55,7 @@ var options = $.extend({
     position: "right",
     escClose: 0,
     stickToBottom: 0,
+    topCorner: 0,
     beforePopup : function(){},
     afterPopup : function(){},
     onBtnClick : function(){},
@@ -97,13 +98,21 @@ function popupShow() {
         }, options.delay);
     }
     } else if (options.slideTop == 1) {
+        if (options.topCorner == 0) {
         $(cp).addClass('slide-top');
+        } else {
+        $(cp).addClass('slide-bottom');    
+        }
     } else if (options.slide == 1 && options.position == "right") {
         $(cp).addClass('slide-left');
     } else if (options.slide == 1 && options.position == "left") {
         $(cp).addClass('slide-right');
     } else if (options.slide == 1 && options.position == "center") {
+        if (options.topCorner == 0) {
         $(cp).addClass('slide-top');
+        } else {
+        $(cp).addClass('slide-bottom');    
+        }
     }
     $(cp).html(popupContent).css("display", "flex").show();
         if (options.delay != 0) {
@@ -133,13 +142,21 @@ function popupClose() {
 
 function slideUndo() {
     if (options.slideTop == 1) {
+       if (options.topCorner == 0) {
        $(cp).removeClass("slide-top").addClass("slide-top-rev");
+        } else {
+       $(cp).removeClass("slide-bottom").addClass("slide-bottom-rev");
+        }
     } else if (options.slide == 1 && options.position == "right") {
        $(cp).removeClass("slide-left").addClass("slide-left-rev");
     } else if (options.slide == 1 && options.position == "left") {
        $(cp).removeClass("slide-right").addClass("slide-right-rev");
     } else if (options.slide == 1 && options.position == "center") {
+       if (options.topCorner == 0) {
        $(cp).removeClass("slide-top").addClass("slide-top-rev");
+        } else {
+       $(cp).removeClass("slide-bottom").addClass("slide-bottom-rev");
+        }
     }
     cpTemp = $(cp);
     cpTemp.animation = 'none';
@@ -251,6 +268,17 @@ function timeOut(time) {
 
     if (options.variant == 10 && options.loadContent !== "no") 
     $(".corner-container-2").load(options.loadContent);
+
+// Top corner option check
+// -----------------------
+
+    if (options.topCorner != 0) {
+        $(cp).addClass('corner-top');
+        verticalPosition = 'top';
+    } else {
+       $(cp).removeClass('corner-top'); 
+        verticalPosition = 'bottom';
+    }
 
 // Close button visibility
 // -----------------------
@@ -387,9 +415,9 @@ function timeOut(time) {
 // ----------------------
 
     if (options.stickToBottom !== 0 && $(window).width() > 768) {
-        $(cp).css({
-            "bottom": "0"
-        });
+        $(cp).css(
+            verticalPosition, "0"
+        );
     if (options.position == "right") {
         $(cp).css({
             "right": "0"

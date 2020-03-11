@@ -151,8 +151,11 @@ position      right     This option is used to change position of the popup.
 escClose      0		Closes pop-up window after Escape key is pressed. 
 			This option works if it is set to 1.
 
+cornerTop     0         Makes the pop-up appear at the top of the browser window. 
+                        Works if it is set to 1.
+
 stickToBottom 0         Removes the pop-up margin and makes it stick to the 
-                        edge of the browser.
+                        edge of the browser. Works if it is set to 1.
 
 --------------------------------------------------
 Corner Popup provides public methods (e.g. usage):

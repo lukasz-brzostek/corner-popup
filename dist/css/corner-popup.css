@@ -1,5 +1,5 @@
 /*
- * Corner Popup v1.18 - 10/3/2020
+ * Corner Popup v1.18 - 11/3/2020
  * Author: Łukasz Brzostek
  *
  * This work is licensed under the Creative Commons
@@ -102,7 +102,19 @@
  justify-content: center;
  word-break: break-word;
 }
-
+#corner-popup.corner-top {
+ bottom: auto !important;
+ top: 60px;
+}
+@media (max-width: 768px) {
+#corner-popup.corner-top {
+ bottom: auto !important;
+ top: 0px !important;
+}
+#corner-popup.corner-top .corner-close {
+ top: 0px;
+}
+}
 @media (max-width: 768px) {
 #corner-popup .popup-xs {
  width: 100% !important;
@@ -111,7 +123,6 @@
  left: 0 !important;
 }
 }
-
 @media (min-width: 768px) {
 #corner-popup {
  bottom: 60px;
@@ -284,6 +295,20 @@
  -moz-animation: slidetoprev 0.5s forwards;
  animation: slidetoprev 0.5s forwards;
 }
+.slide-bottom {
+ position: relative;
+ top: 60px;
+ -webkit-animation: slidebottom 0.5s forwards;
+ -moz-animation: slidebottom 0.5s forwards;
+ animation: slidebottom 0.5s forwards;
+}
+.slide-bottom-rev {
+ position: relative;
+ top: 60px;
+ -webkit-animation: slidebottomrev 0.5s forwards;
+ -moz-animation: slidebottomrev 0.5s forwards;
+ animation: slidebottomrev 0.5s forwards;
+}
 @-webkit-keyframes slideleft {
  0% {
  transform: translateX(300px);
@@ -426,5 +451,53 @@
  }
  100% {
  transform: translateY(300px);
+ }
+}
+@-webkit-keyframes slidebottom {
+ 0% {
+ transform: translateY(-200px);
+ }
+ 100% {
+ transform: translateY(0px);
+ }
+}
+@-moz-keyframes slidebottom {
+ 0% {
+ transform: translateY(-200px);
+ }
+ 100% {
+ transform: translateY(0px);
+ }
+}
+@keyframes slidebottom {
+ 0% {
+ transform: translateY(-200px);
+ }
+ 100% {
+ transform: translateY(0px);
+ }
+}
+@-webkit-keyframes slidebottomrev {
+ 0% {
+ transform: translateY(0);
+ }
+ 100% {
+ transform: translateY(-300px);
+ }
+}
+@-moz-keyframes slidebottomrev {
+ 0% {
+ transform: translateY(0);
+ }
+ 100% {
+ transform: translateY(-300px);
+ }
+}
+@keyframes slidebottomrev {
+ 0% {
+ transform: translateY(0);
+ }
+ 100% {
+ transform: translateY(-300px);
  }
 }
