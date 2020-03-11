@@ -1,4 +1,4 @@
-# Corner Popup v1.17
+# Corner Popup v1.18
 
 Fully customizable pop-up box created to display all types of messages in corner of your browser.
 
@@ -46,6 +46,7 @@ active | 1 | Makes popup enabled or disabled. If it is set to 1 popup will show.
 variant | 1 | Using this option you can set a variant of the popup window. There are 10 variants which could be used for different purposes - for example variant 2 is an option used for cookies information - it even creates and saves cookie for you.
 slide | 0 | If this option is set to 1 standard method of showing a popup (fade) will change to slide.
 slideTop | 0 | This option could be used only if "slide" is set to 1. It makes slide always work from bottom to top.
+delay | 0 | This option sets delay to popup. It will appear after the amount of time you set as parameter (in milliseconds).
 timeOut | 0 | This option sets the timeout to popup, so it will appear and disappear after the amount of time you set as parameter. If you set for example 500 it will disappear after 500ms.
 closeBtn | 1 | Sets close button visibility - if it is set to 0 close button will not show in any variant of the popup.
 shadow | 1 | Sets popup shadow visibility - if it is set to 0 shadow won't be visible in any variant of the popup.
@@ -72,7 +73,8 @@ corners | 0px | This option is used to change popup corner radius.
 position | right | This option is used to change position of the popup. You can change position to left, center or right.
 padding | 0 | This option is used to change padding inside of the popup. You can change it to any value.
 escClose | 0 | Closes pop-up window after Escape key is pressed. This option works if it is set to 1.
-stickToBottom | 0 | Removes the pop-up margin and makes it stick to the edge of the browser.
+topCorner | 0 | Makes the pop-up appear at the top of the browser window. Works if it is set to 1.
+stickToBottom | 0 | Removes the pop-up margin and makes it stick to the edge of the browser. Works if it is set to 1.
 
 Corner Popup provides public methods (e.g. usage):
 ```
