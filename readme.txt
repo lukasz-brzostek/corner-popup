@@ -74,6 +74,9 @@ slide	       0	If this option is set to 1 standard method of showing
 slideTop       0	This option could be used only if "slide" is set to 1. 
                         It makes slide always work from bottom to top.
 
+delay          0        This option sets delay to popup. It will appear after
+                        the amount of time you set as parameter (in milliseconds).
+
 timeOut	       0	This option sets the timeout to popup, so it will appear 
                         and disappear after the amount of time you set as parameter. 
                         If you set for example 500 it will disappear after 500ms.

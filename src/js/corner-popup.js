@@ -1,5 +1,5 @@
 /*
- * Corner Popup v1.17 - 8/3/2020
+ * Corner Popup v1.18 - 10/3/2020
  * Author: Łukasz Brzostek
  *
  * This work is licensed under the Creative Commons
@@ -25,6 +25,7 @@ var options = $.extend({
     slide: 0,
     slideTop: 0,
     timeOut: 0,
+    delay: 0,
     closeBtn: 1,
     shadow: 1,
     link1: "https://wp.pl",
@@ -88,17 +89,29 @@ function readCookie(name) {
 function popupShow() {
     options.beforePopup.call(this);
     if (options.slide == 0) {
-    $(cp).html(popupContent).css("display", "flex").hide().fadeIn(800);
+        $(cp).html(popupContent).css("display", "flex").hide().fadeIn(800);
+        if (options.delay != 0) {
+        $(cp).hide();
+        setTimeout(function() {
+        $(cp).fadeIn(800);
+        }, options.delay);
+    }
     } else if (options.slideTop == 1) {
-    $(cp).addClass('slide-top');
+        $(cp).addClass('slide-top');
     } else if (options.slide == 1 && options.position == "right") {
-    $(cp).addClass('slide-left');
+        $(cp).addClass('slide-left');
     } else if (options.slide == 1 && options.position == "left") {
-    $(cp).addClass('slide-right');
+        $(cp).addClass('slide-right');
     } else if (options.slide == 1 && options.position == "center") {
-    $(cp).addClass('slide-top');
+        $(cp).addClass('slide-top');
     }
     $(cp).html(popupContent).css("display", "flex").show();
+        if (options.delay != 0) {
+        $(cp).hide();
+        setTimeout(function() {
+        $(cp).show();
+    }, options.delay);
+    }
 }
 
 // Check slide option, remove popup
