@@ -50,8 +50,8 @@ delay | 0 | This option sets delay to popup. It will appear after the amount of 
 timeOut | 0 | This option sets the timeout to popup, so it will appear and disappear after the amount of time you set as parameter. If you set for example 500 it will disappear after 500ms.
 closeBtn | 1 | Sets close button visibility - if it is set to 0 close button will not show in any variant of the popup.
 shadow | 1 | Sets popup shadow visibility - if it is set to 0 shadow won't be visible in any variant of the popup.
-link1 |   |  You can change the link that is used in variant 1 of popup. Just type a new address as parameter.
-link2 | # | You can change the link that is used in most of popup variants. Just type a new address as parameter.
+link1 |   |  You can change the link that is used in variant 1 of popup. Just type a new address as first parameter and target as second - e.g. link1: "https://espritdesign.pl, _blank".
+link2 | # | You can change the link that is used in most of popup variants. Just type a new address as first parameter and target as second - e.g. link1: "https://espritdesign.pl, _blank".
 popupImg |   | You can change the image used in popup variant 1. Type your own link to image here.
 cookieImg |   | You can change the image used in popup variant 2 (cookies). Type your own link to image here.
 messageImg |   | You can change the image used in popup variant 3 (message). Type your own link to image here.
