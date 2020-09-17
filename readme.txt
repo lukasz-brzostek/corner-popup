@@ -1,5 +1,5 @@
 ﻿
-Corner Popup v1.17 - 8/3/2020
+Corner Popup v1.19 - 17/9/2020
 Author: Łukasz Brzostek
 
 Website: https://espritdesign.pl/corner-popup
@@ -88,10 +88,12 @@ shadow         1	Sets popup shadow visibility - if it is set to 0 shadow won't
                         be visible in any variant of the popup.
 
 link1		        You can change the link that is used in variant 1 of popup. 
-                        Just type a new address as parameter.
+                        Just type a new address as first parameter and target as
+                        second - e.g. link1: "https://espritdesign.pl, _blank".
 
 link2          #	You can change the link that is used in most of popup variants. 
-                        Just type a new address as parameter.
+                        Just type a new address as first parameter and target as
+                        second - e.g. link1: "https://espritdesign.pl, _blank".
 
 popupImg		You can change the image used in popup variant 1. 
                         Type your own link to image here.
