@@ -229,8 +229,8 @@ function timeOut(time) {
     }
     }
 
-// Check for target parameter in link1 and link2 variable
-// ------------------------------------------------------
+// Split link variable into array and check target value
+// -----------------------------------------------------
 
     options.link1 = options.link1.replace(/\s/g, "").split(',');
     options.link2 = options.link2.replace(/\s/g, "").split(',');
