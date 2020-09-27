@@ -1,5 +1,5 @@
 /*
- * Corner Popup v1.19 - 17/9/2020
+ * Corner Popup v1.20 - 27/9/2020
  * Author: Łukasz Brzostek
  *
  * This work is licensed under the Creative Commons
@@ -85,6 +85,7 @@
  height: auto;
 }
 #corner-popup {
+ box-sizing: border-box;
  font-family: 'Open Sans', 'Halvetica', sans-serif;
  text-rendering: optimizeLegibility;
  display: none;

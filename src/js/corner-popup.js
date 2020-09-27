@@ -1,5 +1,5 @@
 /*
- * Corner Popup v1.19 - 17/9/2020
+ * Corner Popup v1.20 - 27/9/2020
  * Author: Łukasz Brzostek
  *
  * This work is licensed under the Creative Commons
@@ -450,21 +450,23 @@ function timeOut(time) {
         popupClose();       
     });
 
-    $(".corner-btn, .corner-btn-close, .corner-btn-cookie").click(function() {
-        if (options.onBtnClick == 'function(){}') {
-        popupClose();  
-        }     
+    $(".corner-btn, .corner-btn-close").click(function() {
+        if (options.onBtnClick == 'function(){}' || options.onBtnClick == 'function (){}') {
+        popupClose();
+        window.location = $(this).attr('href');
+        }  
     });
 
     $(".corner-btn-cookie").click(function() {
+        popupClose();
         createCookie('cp-cookies-accepted', 'Yes', 365);
     });
 
 // onBtnClick event trigger
-// ---------------------------
+// ------------------------
 
     $('.corner-btn, .corner-btn-close, .corner-btn-cookie').click(function(e) {
-        if (options.onBtnClick != 'function(){}') {
+        if (options.onBtnClick != 'function(){}' || options.onBtnClick != 'function (){}') {
         e.preventDefault();
         options.onBtnClick.call(this);
         }
