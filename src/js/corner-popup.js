@@ -1,14 +1,11 @@
 /*
- * Corner Popup v1.20 - 27/9/2020
+ * Corner Popup v1.21 - 23/12/2020
  * Author: Łukasz Brzostek
  *
  * This work is licensed under the Creative Commons
  * Attribution 4.0 International License:
  * https://creativecommons.org/licenses/by/4.0
 */
-
-// Check for jQuery
-// ----------------
 
 if ("undefined" == typeof jQuery)
     throw new Error("Corner Popup requires jQuery");
@@ -450,25 +447,21 @@ function timeOut(time) {
         popupClose();       
     });
 
-    $(".corner-btn, .corner-btn-close").click(function() {
-        if (options.onBtnClick == 'function(){}' || options.onBtnClick == 'function (){}') {
-        popupClose();
-        window.location = $(this).attr('href');
-        }  
-    });
-
-    $(".corner-btn-cookie").click(function() {
-        popupClose();
-        createCookie('cp-cookies-accepted', 'Yes', 365);
-    });
-
-// onBtnClick event trigger
-// ------------------------
+// Button click
+// ------------
 
     $('.corner-btn, .corner-btn-close, .corner-btn-cookie').click(function(e) {
-        if (options.onBtnClick != 'function(){}' || options.onBtnClick != 'function (){}') {
+        elementClassName = $(this).attr("class");
+        if (options.onBtnClick.toString().length > 13) {
         e.preventDefault();
         options.onBtnClick.call(this);
+        } else {
+          if (elementClassName == 'corner-btn-cookie') {
+          popupClose();
+          createCookie('cp-cookies-accepted', 'Yes', 365);
+          } else if (elementClassName == 'corner-btn-close' && options.link2[0] == "#") {
+          popupClose();
+          }
         }
     });  
 

@@ -1,4 +1,4 @@
-# Corner Popup v1.20
+# Corner Popup v1.21
 
 Fully customizable pop-up box created to display all types of messages in corner of your browser.
 

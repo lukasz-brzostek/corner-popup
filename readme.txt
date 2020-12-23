@@ -1,5 +1,5 @@
 ﻿
-Corner Popup v1.20 - 27/9/2020
+Corner Popup v1.21 - 23/12/2020
 Author: Łukasz Brzostek
 
 Website: https://espritdesign.pl/corner-popup
