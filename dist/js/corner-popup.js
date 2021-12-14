@@ -179,6 +179,14 @@ if ("undefined" == typeof jQuery)
       }, time);
     }
 
+    // Save cookies acceptance and close popup
+    // ---------------------------------------
+
+    function handleCookiesAccept() {
+      saveToLocalStorage("cp-cookies-accepted", true);
+      popupClose();
+    }
+
     // Check if plugin is already used and remove previous occurrences
     // ---------------------------------------------------------------
 
@@ -553,8 +561,13 @@ if ("undefined" == typeof jQuery)
         popupClose();
       });
 
-      // Button click
-      // ------------
+      $(".corner-close").keyup(function(event) {
+        if (event.key === "Enter") 
+          popupClose();
+      });
+
+      // Button click / keydown usage
+      // ----------------------------
 
       $(".corner-btn, .corner-btn-close, .corner-btn-cookie").click(function(event) {
         elementClassName = $(this).attr("class");
@@ -564,8 +577,7 @@ if ("undefined" == typeof jQuery)
           options.onBtnClick.call(this);
         } else {
           if (elementClassName == "corner-btn-cookie") {
-            saveToLocalStorage("cp-cookies-accepted", true);
-            popupClose();
+            handleCookiesAccept();
           } else if (
             elementClassName == "corner-btn-close" &&
             options.link2[0] == "#"
@@ -573,6 +585,11 @@ if ("undefined" == typeof jQuery)
             popupClose();
           }
         }
+      });
+
+      $(".corner-btn-cookie").keyup(function(event) {
+        if (event.key === "Enter") 
+          handleCookiesAccept();
       });
 
       // Close on ESC
