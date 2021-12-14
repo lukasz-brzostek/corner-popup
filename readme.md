@@ -1,4 +1,4 @@
-# Corner Popup v1.21
+# Corner Popup v1.30
 
 Fully customizable pop-up box created to display all types of messages in corner of your browser.
 
@@ -42,14 +42,15 @@ All available options with description:
 
 Option | Default | Description
 ------ | ------- | -----------
-active | 1 | Makes popup enabled or disabled. If it is set to 1 popup will show. If set to 0 it's disabled.
+active | true | Makes popup enabled or disabled. If it is set to 1 popup will show. If set to 0 it's disabled.
+displayOnce | false | If this option is set to 1, the popup will be displayed only once (which is stored in browser memory).
 variant | 1 | Using this option you can set a variant of the popup window. There are 10 variants which could be used for different purposes - for example variant 2 is an option used for cookies information - it even creates and saves cookie for you.
-slide | 0 | If this option is set to 1 standard method of showing a popup (fade) will change to slide.
-slideTop | 0 | This option could be used only if "slide" is set to 1. It makes slide always work from bottom to top.
+slide | false | If this option is set to 1 standard method of showing a popup (fade) will change to slide.
+slideTop | false | This option could be used only if "slide" is set to 1. It makes slide always work from bottom to top.
 delay | 0 | This option sets delay to popup. It will appear after the amount of time you set as parameter (in milliseconds).
 timeOut | 0 | This option sets the timeout to popup, so it will appear and disappear after the amount of time you set as parameter. If you set for example 500 it will disappear after 500ms.
-closeBtn | 1 | Sets close button visibility - if it is set to 0 close button will not show in any variant of the popup.
-shadow | 1 | Sets popup shadow visibility - if it is set to 0 shadow won't be visible in any variant of the popup.
+closeBtn | true | Sets close button visibility - if it is set to 0 close button will not show in any variant of the popup.
+shadow | true | Sets popup shadow visibility - if it is set to 0 shadow won't be visible in any variant of the popup.
 link1 |   |  You can change the link that is used in variant 1 of popup. Just type a new address as first parameter and target as second - e.g. link1: "https://espritdesign.pl, _blank".
 link2 | # | You can change the link that is used in most of popup variants. Just type a new address as first parameter and target as second - e.g. link2: "https://espritdesign.pl, _blank".
 popupImg |   | You can change the image used in popup variant 1. Type your own link to image here.
@@ -59,7 +60,7 @@ header |   | In this option you can change header used in some of popup variants
 text1 |   | In this 2 options you can change text used in popup variants - text1 is for cookie message. You can use html tags here.
 button1, button2, button3 |   | In this 3 options you can change label used in the buttons. "button2" is used in cookies popup.
 content |   | You can place in this option text (including html tags) which is displayed in variant nr.10 of popup - this variant is made to show your own content.
-loadContent | No | This option loads data from another file (e.g. html file with prepared content). Just write the file address as parameter.
+loadContent | false | This option loads data from another file (e.g. html file with prepared content). Just write the file address as parameter.
 width | 390px | This option is used to change the popup width. Use here css units.
 font |   | This option is used to change the font used in popup elements. Use here css code - e.g. "'Open Sans', 'Halvetica', sans-serif".
 colors | #543189 | This option changes color of primary elements - close button icon, headers, buttons.
@@ -72,9 +73,9 @@ btnTextColor | #fff | This option changes color of text in buttons.
 corners | 0px | This option is used to change popup corner radius.
 position | right | This option is used to change position of the popup. You can change position to left, center or right.
 padding | 0 | This option is used to change padding inside of the popup. You can change it to any value.
-escClose | 0 | Closes pop-up window after Escape key is pressed. This option works if it is set to 1.
-topCorner | 0 | Makes the pop-up appear at the top of the browser window. Works if it is set to 1.
-stickToBottom | 0 | Removes the pop-up margin and makes it stick to the edge of the browser. Works if it is set to 1.
+escClose | false | Closes pop-up window after Escape key is pressed. This option works if it is set to 1.
+topCorner | false | Makes the pop-up appear at the top of the browser window. Works if it is set to 1.
+stickToBottom | false | Removes the pop-up margin and makes it stick to the edge of the browser. Works if it is set to 1.
 
 Corner Popup provides public methods (e.g. usage):
 ```

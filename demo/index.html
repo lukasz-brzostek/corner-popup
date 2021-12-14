@@ -1,273 +1,288 @@
 <!doctype html>
-<html lang="pl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Corner Popup Demo - v 1.21</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/main.min.css">
-<link rel="stylesheet" href="css/corner-popup.min.css">
-<link rel="stylesheet" href="css/bootstrap-select.min.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/color-picker.min.css">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-</head>
-<body>
-<div id="config-toggle" class="hidden-xs"> <i class="fa fa-cog" aria-hidden="true" id="config-icon"></i> </div>
-<div id="configure">
-  <div class="container-fluid">
-    <h2>Plugin settings:</h2>
-    <div class="row">
-      <div class="col-md-2 col-lg-2">
-        <div class="checkbox checbox-switch">
-          <label>
-            <input type="checkbox" class="activecheck" checked="checked" />
-            <span></span>Active </label>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Corner Popup Demo - v 1.30</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/corner-popup.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/color-picker.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div id="config-toggle" class="hidden-xs"> 
+      <i class="fa fa-cog" id="config-icon" tabindex="0"></i> 
+    </div>
+    <div id="configure">
+      <div class="container-fluid">
+        <h2>Plugin settings:</h2>
+        <div class="row">
+          <div class="col-md-2 col-lg-2">
+            <div class="checkbox checbox-switch">
+              <label>
+                <input type="checkbox" class="activecheck" checked="checked">
+                <span></span>Active </label>
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="checkbox checbox-switch">
+              <label>
+                <input type="checkbox" class="oncecheck">
+                <span></span>Display once</label>
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="checkbox checbox-switch">
+              <label>
+                <input type="checkbox" class="slidecheck">
+                <span></span>Slide effect </label>
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="checkbox checbox-switch">
+              <label>
+                <input type="checkbox" class="slidetop">
+                <span></span>Slide top/bottom</label>
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="checkbox checbox-switch">
+              <label>
+                <input type="checkbox" class="closebtn" checked="checked">
+                <span></span>Close button </label>
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="checkbox checbox-switch">
+              <label>
+                <input type="checkbox" class="shadow" checked="checked">
+                <span></span>Shadow </label>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="checkbox checbox-switch">
-          <label>
-            <input type="checkbox" class="slidecheck" />
-            <span></span>Slide effect </label>
+        <div class="hr-1"></div>
+        <div class="row">
+          <div class="col-md-2 col-lg-2">
+            <div class="checkbox checbox-switch">
+              <label>
+                <input type="checkbox" class="esc">
+                <span></span>Close on Esc </label>
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="checkbox checbox-switch">
+              <label>
+                <input type="checkbox" class="topcorner">
+                <span></span>Top corner</label>
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="checkbox checbox-switch">
+              <label>
+                <input type="checkbox" class="stick">
+                <span></span>Stick bottom/top</label>
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="delayset" placeholder="Delay (ms)">
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="link1set" placeholder="Link #1 (url, target)">
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="link2set" placeholder="Link #2 (url, target)">
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="checkbox checbox-switch">
-          <label>
-            <input type="checkbox" class="slidetop" />
-            <span></span>Slide top/bottom</label>
+        <div class="hr"></div>
+        <div class="row">
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="img1set" placeholder="Popup image (url)">
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="img2set" placeholder="Cookies image (url)">
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="img3set" placeholder="Message image (url)">
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="headerset" placeholder="Header">
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="text1set" placeholder="Text #1">
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="text2set" placeholder="Text #2">
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="checkbox checbox-switch">
-          <label>
-            <input type="checkbox" class="closebtn" checked="checked" />
-            <span></span>Close button </label>
+        <div class="hr"></div>
+        <div class="row">
+          <div class="col-md-1 col-lg-1">
+            <div class="form-group">
+              <input type="text" class="btn1set" placeholder="Btn1 text">
+            </div>
+          </div>
+          <div class="col-md-1 col-lg-1">
+            <div class="form-group">
+              <input type="text" class="btn2set" placeholder="Btn2 text">
+            </div>
+          </div>
+          <div class="col-md-1 col-lg-1">
+            <div class="form-group">
+              <input type="text" class="btn3set" placeholder="Btn3 text">
+            </div>
+          </div>
+          <div class="col-md-1 col-lg-1">
+            <div class="form-group">
+              <input type="text" class="widthset" placeholder="Width">
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="cornerset" placeholder="Corner radius (px)">
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="contentset" placeholder="Content (html)">
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="loadset" placeholder="Load content (url)">
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="fontset" placeholder="Font">
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="checkbox checbox-switch">
-          <label>
-            <input type="checkbox" class="shadow" checked="checked" />
-            <span></span>Shadow </label>
+        <div class="hr"></div>
+        <div class="row">
+          <div class="col-md-1 col-lg-1">
+            <div class="form-group">
+              <input type="text" class="colorset" placeholder="#543189">
+            </div>
+          </div>
+          <div class="col-md-1 col-lg-1">
+            <div class="form-group">
+              <input type="text" class="bgset" placeholder="#fff">
+            </div>
+          </div>
+          <div class="col-md-1 col-lg-1">
+            <div class="form-group">
+              <input type="text" class="borderset" placeholder="#efefef">
+            </div>
+          </div>
+          <div class="col-md-1 col-lg-1">
+            <div class="form-group">
+              <input type="text" class="textcolorset" placeholder="#181818">
+            </div>
+          </div>
+          <div class="col-md-1 col-lg-1">
+            <div class="form-group">
+              <input type="text" class="iconset" placeholder="#543189">
+            </div>
+          </div>
+          <div class="col-md-1 col-lg-1">
+            <div class="form-group">
+              <input type="text" class="btncolorset" placeholder="#543189">
+            </div>
+          </div>
+          <div class="col-md-1 col-lg-1">
+            <div class="form-group">
+              <input type="text" class="btntextcolorset" placeholder="#fff">
+            </div>
+          </div>
+          <div class="col-md-1 col-lg-1">
+            <div class="form-group">
+              <input type="text" class="positionset" placeholder="Position">
+            </div>
+          </div>
+          <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="paddingset" placeholder="Padding (px)">
+            </div>
+          </div>
+            <div class="col-md-2 col-lg-2">
+            <div class="form-group">
+              <input type="text" class="timeoutset" placeholder="Timeout (ms)">
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="checkbox checbox-switch">
-          <label>
-            <input type="checkbox" class="esc" />
-            <span></span>Close on Esc </label>
+        <div class="row copy-div">
+          <div class="col-md-9 col-lg-9">
+            <div class="form-group">
+              <div class="copy-info">Copied!</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-lg-3">
+            <div class="form-group">
+              <button id="copy">
+                <i class="fa fa-clone copy-icon" aria-hidden="true"></i> 
+                Copy settings to clipboard
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="hr-1"></div>
-    <div class="row">
-      <div class="col-md-2 col-lg-2">
-        <div class="checkbox checbox-switch">
-          <label>
-            <input type="checkbox" class="topcorner" />
-            <span></span>Top corner</label>
+    <div id="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12">
+          <a href=""><img src="img/img-2.png" class="center-block img-circle logo" alt="Corner Popup"></a>
+          <p class="heading">Corner Popup<span class="version"><small>v</small> 1.30</span></p>
         </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="checkbox checbox-switch">
-          <label>
-            <input type="checkbox" class="stick" />
-            <span></span>Stick bottom/top</label>
+        <div class="col-xs-12 col-sm-12">
+          <select class="selectpicker" data-width="100%" id="select" onchange="getVariant(this)">
+            <option value="0">Choose a variant:</option>
+            <option value="1">Standard popup</option>
+            <option value="2">Cookies popup</option>
+            <option value="3">Message popup #1</option>
+            <option value="4">Message popup #2</option>
+            <option value="5">Text popup</option>
+            <option value="6">Information popup</option>
+            <option value="7">Header popup</option>
+            <option value="8">Header, text popup</option>
+            <option value="9">Header, text, button popup</option>
+            <option value="10">Own content popup</option>
+          </select>
         </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="delayset" placeholder="Delay (ms)">
-        </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="link1set" placeholder="Link #1 (url, target)">
-        </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="link2set" placeholder="Link #2 (url, target)">
-        </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="img1set" placeholder="Popup image (url)">
+        <div class="col-xs-12 col-sm-12">
+          <div class="info text-center"> 
+            See <a href="../index.html" class="link">instructions</a> to learn how to customize pop-up. 
+          </div>
         </div>
       </div>
     </div>
-    <div class="hr"></div>
-    <div class="row">
-      <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="img2set" placeholder="Cookies image (url)">
-        </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="img3set" placeholder="Message image (url)">
-        </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="headerset" placeholder="Header">
-        </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="text1set" placeholder="Text #1">
-        </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="text2set" placeholder="Text #2">
-        </div>
-      </div>
-      <div class="col-md-1 col-lg-1">
-        <div class="form-group">
-          <input type="text" class="btn1set" placeholder="Btn1 text">
-        </div>
-      </div>
-      <div class="col-md-1 col-lg-1">
-        <div class="form-group">
-          <input type="text" class="btn2set" placeholder="Btn2 text">
-        </div>
-      </div>
     </div>
-    <div class="hr"></div>
-    <div class="row">
-      <div class="col-md-1 col-lg-1">
-        <div class="form-group">
-          <input type="text" class="btn3set" placeholder="Btn3 text">
-        </div>
-      </div>
-      <div class="col-md-1 col-lg-1">
-        <div class="form-group">
-          <input type="text" class="widthset" placeholder="Width">
-        </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="cornerset" placeholder="Corner radius (px)">
-        </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="contentset" placeholder="Content (html)">
-        </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="loadset" placeholder="Load content (url)">
-        </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="fontset" placeholder="Font">
-        </div>
-      </div>
-      <div class="col-md-1 col-lg-1">
-        <div class="form-group">
-          <input type="text" class="colorset" placeholder="#543189">
-        </div>
-      </div>
-      <div class="col-md-1 col-lg-1">
-        <div class="form-group">
-          <input type="text" class="bgset" placeholder="#fff">
-        </div>
-      </div>
-    </div>
-    <div class="hr"></div>
-    <div class="row">
-      <div class="col-md-1 col-lg-1">
-        <div class="form-group">
-          <input type="text" class="borderset" placeholder="#efefef">
-        </div>
-      </div>
-      <div class="col-md-1 col-lg-1">
-        <div class="form-group">
-          <input type="text" class="textcolorset" placeholder="#181818">
-        </div>
-      </div>
-      <div class="col-md-1 col-lg-1">
-        <div class="form-group">
-          <input type="text" class="iconset" placeholder="#543189">
-        </div>
-      </div>
-      <div class="col-md-1 col-lg-1">
-        <div class="form-group">
-          <input type="text" class="btncolorset" placeholder="#543189">
-        </div>
-      </div>
-      <div class="col-md-1 col-lg-1">
-        <div class="form-group">
-          <input type="text" class="btntextcolorset" placeholder="#fff">
-        </div>
-      </div>
-      <div class="col-md-1 col-lg-1">
-        <div class="form-group">
-          <input type="text" class="positionset" placeholder="Position">
-        </div>
-      </div>
-      <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="paddingset" placeholder="Padding (px)">
-        </div>
-      </div>
-       <div class="col-md-2 col-lg-2">
-        <div class="form-group">
-          <input type="text" class="timeoutset" placeholder="Timeout (ms)">
-        </div>
-      </div>
-    </div>
-    <div class="row copy-div">
-      <div class="col-md-9 col-lg-9">
-        <div class="form-group">
-          <div class="copy-info">Copied!</div>
-        </div>
-      </div>
-      <div class="col-md-3 col-lg-3">
-        <div class="form-group">
-          <button id="copy"><i class="fa fa-clone copy-icon" aria-hidden="true"></i> Copy settings to clipboard</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div id="main">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12"><a href=""><img src="img/img-2.png" class="center-block img-circle logo" alt="Corner Popup"></a>
-        <p class="heading">Corner Popup<span class="version">v 1.21</span></p>
-      </div>
-      <div class="col-xs-12 col-sm-12">
-        <select class="selectpicker" data-width="100%" id="select" onchange="getvariant(this)">
-          <option value="0">Choose a variant:</option>
-          <option value="1">Standard popup</option>
-          <option value="2">Cookies popup</option>
-          <option value="3">Message popup #1</option>
-          <option value="4">Message popup #2</option>
-          <option value="5">Text popup</option>
-          <option value="6">Information popup</option>
-          <option value="7">Header popup</option>
-          <option value="8">Header, text popup</option>
-          <option value="9">Header, text, button popup</option>
-          <option value="10">Own content popup</option>
-        </select>
-      </div>
-      <div class="col-xs-12 col-sm-12">
-        <div class="info text-center"> See <a href="../index.html" class="link">instructions</a> to learn how to customize pop-up. </div>
-      </div>
-    </div>
-  </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
-<script src="js/corner-popup.min.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/bootstrap-select.min.js"></script>
-<script src="js/color-picker.min.js"></script> 
-<script src="js/main.min.js"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+    <script src="js/corner-popup.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/color-picker.min.js"></script> 
+    <script src="js/main.min.js"></script>
+  </body>
 </html>
