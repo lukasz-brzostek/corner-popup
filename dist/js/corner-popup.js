@@ -1,5 +1,5 @@
 /*
- * Corner Popup v1.30 - 13/12/2021
+ * Corner Popup v1.31 - 27/12/2023
  * Author: Łukasz Brzostek
  *
  * This work is licensed under the Creative Commons
@@ -57,6 +57,7 @@ if ("undefined" == typeof jQuery)
         beforePopup: function() {},
         afterPopup: function() {},
         onBtnClick: function() {},
+        onCloseBtnClick: function() {}
       },
       options
     );
@@ -185,6 +186,16 @@ if ("undefined" == typeof jQuery)
     function handleCookiesAccept() {
       saveToLocalStorage("cp-cookies-accepted", true);
       popupClose();
+    }
+
+    // Call onCloseBtnClick event if needed
+    // ------------------------------------
+
+    function handleOnCloseBtnClickEvent() {
+      if (options.onCloseBtnClick.toString().length > 13) {
+        event.preventDefault();
+        options.onCloseBtnClick.call(this);
+      }
     }
 
     // Check if plugin is already used and remove previous occurrences
@@ -558,12 +569,15 @@ if ("undefined" == typeof jQuery)
       // -----------
 
       $(".corner-close").click(function() {
+        handleOnCloseBtnClickEvent();
         popupClose();
       });
 
       $(".corner-close").keyup(function(event) {
-        if (event.key === "Enter") 
+        if (event.key === "Enter") {
+          handleOnCloseBtnClickEvent();
           popupClose();
+        }
       });
 
       // Button click / keydown usage

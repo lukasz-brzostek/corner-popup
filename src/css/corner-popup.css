@@ -1,5 +1,5 @@
 /*
- * Corner Popup v1.30 - 13/12/2021
+ * Corner Popup v1.31 - 27/12/2023
  * Author: Łukasz Brzostek
  *
  * This work is licensed under the Creative Commons
@@ -13,8 +13,8 @@
 #corner-popup span,
 #corner-popup div:before,
 #corner-popup div:after {
-  -webkit-transition: all ease-in 0.3s;
   transition-property: all ease-in 0.3s;
+  -webkit-transition: all ease-in 0.3s;
   -webkit-font-smoothing: subpixel-antialiased;
   -webkit-text-stroke: 1px transparent;
 }

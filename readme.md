@@ -15,7 +15,7 @@ Using Corner Popup is very simple. As the first step, add jQuery and Corner Popu
 
 ```
 <link rel="stylesheet" href="css/corner-popup.min.css">
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="js/corner-popup.min.js"></script>
 ```
 
@@ -106,6 +106,7 @@ Event | Description
 beforePopup | Your code will work before the popup window appears.
 afterPopup | Your code will work after closing the pop-up window.
 onBtnClick | Your code will work after pressing the popup button.
+onCloseBtnClick | Your code will work after pressing close button.
 
 ## License
 

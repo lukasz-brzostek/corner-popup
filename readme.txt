@@ -1,4 +1,4 @@
-﻿Corner Popup v1.30 - 13/12/2021
+﻿Corner Popup v1.31 - 27/12/2023
 Author: Łukasz Brzostek
 
 Website: https://espritdesign.pl/corner-popup
@@ -32,7 +32,7 @@ and Corner Popup files for the project (remember to add appropriate
 files to folders):
 
 <link rel="stylesheet" href="css/corner-popup.min.css">
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="js/corner-popup.min.js"></script>
 
 As step 2 call script from your website code:
@@ -187,11 +187,12 @@ beforePopup: function() {
 }
 </script>
 
-Event         Description
------         -----------
-beforePopup   Your code will work before the popup window appears.
-afterPopup    Your code will work after closing the pop-up window.
-onBtnClick    Your code will work after pressing the popup button.
+Event             Description
+-----             -----------
+beforePopup       Your code will work before the popup window appears.
+afterPopup        Your code will work after closing the pop-up window.
+onBtnClick        Your code will work after pressing the popup button.
+onCloseBtnClick   Your code will work after pressing close button.
 
 ----------
 3. License
